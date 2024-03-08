@@ -1,0 +1,68 @@
+.btn {
+    font-family: inherit;
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-500);
+    line-height: var(--line-height-20);
+    outline: none;
+    border-radius: var(--border-radius-80);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 5.6rem;
+    padding: 0 var(--space-16);
+    transition: all 0.3s;
+    border-radius: 10rem;
+}
+
+.btn-full-width {
+    width: 100%;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+.btn:disabled {
+    pointer-events: none;
+}
+
+.btn-small {
+    height: 3.6rem;
+    width: 13.5rem;
+}
+
+.btn-medium {
+    height: 4rem;
+    width: 19.9rem;
+    padding: 0 var(--space-20);
+}
+
+.btn-large {
+    height: 4.8rem;
+    width: 23.9rem;
+    padding: 0 var(--space-24);
+}
+
+.btn-circle {
+    border-radius: var(--border-radius-20);
+}
+
+.btn-large.btn-circle {
+    border-radius: var(--border-radius-24);
+}
+
+/* Primary Button */
+
+.btn-primary:hover {
+    background-color: var(--primary-600);
+    box-shadow: var(--shadow-s-hover);
+}
+
+.btn-primary:disabled {
+    background-color: var(--primary-300);
+}
+
+.btn-primary:focus {
+    background-color: var(--primary-700);
+    box-shadow: var(--shadow-xs-hover);
+}
