@@ -1,13 +1,11 @@
 import "./App.css";
 import { Button } from "./design-system";
+import { HomePage } from "./page/home/HomePage";
 
 function App() {
     return (
         <>
-            <h1>HI</h1>
-            <Button size="sm" shape="circle">
-                Hi
-            </Button>
+            <HomePage></HomePage>
         </>
     );
 }
