@@ -13,6 +13,9 @@
     padding: 0 var(--space-16);
     transition: all 0.3s;
     border-radius: 10rem;
+    border: 0.5px solid black;
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
 }
 
 .btn-full-width {
@@ -21,6 +24,9 @@
 
 .btn:hover {
     cursor: pointer;
+    border: 0.5px solid black;
+    border-right: none;
+    border-bottom: none;
 }
 .btn:disabled {
     pointer-events: none;
