@@ -2,6 +2,7 @@ import React from "react";
 import { TopNavigation } from "./sections/top-navigation/TopNavigation";
 
 import styled, { keyframes } from "styled-components";
+import { Services } from "./sections/service/Services";
 
 const Base = styled.div`
     max-width: 192rem;
@@ -40,6 +41,7 @@ const HomePage = () => {
     return (
         <Base>
             <TopNavigation />
+            <Services />
         </Base>
     );
 };

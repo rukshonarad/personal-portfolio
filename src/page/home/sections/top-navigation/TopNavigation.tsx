@@ -33,15 +33,8 @@ const HeaderBase = styled.header`
     z-index: 1000;
 `;
 
-const NavigationLinks = styled.header`
-    display: flex;
-    gap: var(--space-40);
-`;
-
 const Buttons = styled.div`
     display: flex;
-
-    /* gap: var(--space-10); */
 `;
 
 const TopNavigation = () => {
