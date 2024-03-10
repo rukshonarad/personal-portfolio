@@ -3,6 +3,7 @@ import { TopNavigation } from "./sections/top-navigation/TopNavigation";
 
 import styled, { keyframes } from "styled-components";
 import { Services } from "./sections/service/Services";
+import { ServiceDescription } from "./sections/service/ServiceDescription";
 
 const Base = styled.div`
     max-width: 192rem;
@@ -42,6 +43,7 @@ const HomePage = () => {
         <Base>
             <TopNavigation />
             <Services />
+            <ServiceDescription />
         </Base>
     );
 };

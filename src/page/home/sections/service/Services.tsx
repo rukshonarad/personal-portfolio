@@ -26,12 +26,16 @@ const Description = styled(Typography)`
     margin-bottom: var(--space-40);
     width: 70%;
     margin: 0 auto;
+    margin-bottom: var(--space-30);
 `;
 
 const ButtonWrapper = styled.div`
     margin: 0 auto;
     max-width: 27rem;
-    margin-bottom: var(--space-64);
+
+    Button {
+        margin: 0 auto;
+    }
 `;
 
 const Services = () => {
