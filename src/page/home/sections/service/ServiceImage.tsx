@@ -1,30 +1,55 @@
-import React from "react";
-import forward from "./forward.png";
-import upload from "./upload.png";
-import designe from "./designe.png";
-import infinite from "./infinite.png";
-import "./ImageWrapper.css";
-const ImageWrapper = () => {
+import forward from "../../../../assets/forward 1.png";
+import upload from "../../../../assets/upload 1.png";
+import designe from "../../../../assets/img.png";
+import infinite from "../../../../assets/infinite 1.png";
+
+import styled from "styled-components";
+import { Typography } from "../../../../design-system/Typography";
+const ImageWrapper = styled.div`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: var(--space-50);
+`;
+const ImageContainer = styled.div`
+    text-align: center;
+
+    img {
+        width: 100px;
+        gap: var(--space-20);
+    }
+`;
+
+const ServiceImage = () => {
     return (
-        <div className="image-wrapper">
-            <div className="image-container">
-                <img src={forward} alt="Forward" />
-                <p>Forward</p>
-            </div>
-            <div className="image-container">
+        <ImageWrapper>
+            <ImageContainer>
+                <img src={designe} alt="Forward" />
+                <Typography variant="paragraphSM" align="center">
+                    Create an Account
+                </Typography>
+            </ImageContainer>
+            <ImageContainer>
                 <img src={upload} alt="Upload" />
-                <p>Upload</p>
-            </div>
-            <div className="image-container">
-                <img src={designe} alt="Designe" />
-                <p>Designe</p>
-            </div>
-            <div className="image-container">
-                <img src={infinite} alt="Infinite" />
-                <p>Infinite</p>
-            </div>
-        </div>
+                <Typography variant="paragraphSM" align="center">
+                    Submit Desige Request
+                </Typography>
+            </ImageContainer>
+            <ImageContainer>
+                <img src={infinite} alt="Designe" />
+                <Typography variant="paragraphSM" align="center">
+                    Desigen Until You Happy
+                </Typography>
+            </ImageContainer>
+            <ImageContainer>
+                <img src={forward} alt="Infinite" />
+                <Typography variant="paragraphSM" align="center">
+                    Cancel or pause any Time
+                </Typography>
+            </ImageContainer>
+        </ImageWrapper>
     );
 };
 
-export default ImageWrapper;
+export { ServiceImage };

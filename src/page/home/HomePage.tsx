@@ -4,7 +4,7 @@ import { TopNavigation } from "./sections/top-navigation/TopNavigation";
 import styled, { keyframes } from "styled-components";
 import { Services } from "./sections/service/Services";
 import { ServiceDescription } from "./sections/service/ServiceDescription";
-
+import waveLine from "../../assets/waveborder.png";
 const Base = styled.div`
     max-width: 192rem;
     margin: 0 auto;
@@ -21,7 +21,10 @@ const rotateAnimation = keyframes`
     transform: rotate(360deg);
   }
 `;
-
+const WaveLine = styled.img`
+    width: 131rem;
+    height: auto;
+`;
 // Styled component with custom shape and animation
 const CustomShape = styled.div`
     width: 200px;
@@ -44,6 +47,7 @@ const HomePage = () => {
             <TopNavigation />
             <Services />
             <ServiceDescription />
+            <WaveLine src={waveLine} alt="" />
         </Base>
     );
 };

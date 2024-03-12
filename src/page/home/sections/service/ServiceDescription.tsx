@@ -5,6 +5,7 @@ import forward from "../../../../assets/forward 1.png";
 import upload from "../../../../assets/upload 1.png";
 import designe from "../../../../assets/img.png";
 import infinite from "../../../../assets/infinite 1.png";
+import { ServiceImage } from "./ServiceImage";
 // import { FeaturesCard } from "./featuresCard";
 // import { features } from "./featuresCard/features";
 
@@ -15,6 +16,7 @@ const SectionBase = styled.section`
     width: 142rem;
     border-radius: var(--space-80);
     margin: 0 auto;
+    margin-bottom: var(--space-50);
 `;
 
 const DescriptionTextWrapper = styled.div`
@@ -44,12 +46,7 @@ const ServiceDescription = () => {
                 <Title variant="h6" weight="bold">
                     How it works
                 </Title>
-                <ImageWrapper>
-                    <img src={forward} alt="" />
-                    <img src={upload} alt="" />
-                    <img src={designe} alt="" />
-                    <img src={infinite} alt="" />
-                </ImageWrapper>
+                <ServiceImage />
             </DescriptionTextWrapper>
         </SectionBase>
     );
