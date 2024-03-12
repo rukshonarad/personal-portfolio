@@ -14,6 +14,8 @@ const StyledLink = styled.nav`
     a {
         color: var(--jaguar-900);
         font-weight: var(--font-weight-500);
+        margin-right: 2rem;
+        font-size: var(--font-size-10);
     }
 `;
 const HeaderBase = styled.header`
@@ -45,11 +47,7 @@ const TopNavigation = () => {
             </Typography>
             <StyledLink>
                 {links.map((link, index) => (
-                    <a
-                        key={index}
-                        href={link.link}
-                        style={{ marginRight: "20px" }}
-                    >
+                    <a key={index} href={link.link}>
                         {link.text}
                     </a>
                 ))}

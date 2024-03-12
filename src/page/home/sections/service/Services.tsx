@@ -6,7 +6,8 @@ import { Typography } from "../../../../design-system/Typography";
 
 const SectionBase = styled.section`
     max-width: 192rem;
-    padding: 25rem 15.2rem;
+    padding-top: var(--space-250);
+    padding-bottom: var(--space-50);
 `;
 
 const FeaturesTextWrapper = styled.div`
