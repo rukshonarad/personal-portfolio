@@ -18,7 +18,6 @@ const FeaturesTextWrapper = styled.div`
 `;
 
 const Title = styled(Typography)`
-    color: var(--jaguar-900);
     margin-bottom: var(--space-30);
 `;
 
@@ -29,7 +28,10 @@ const Description = styled(Typography)`
     margin: 0 auto;
     margin-bottom: var(--space-30);
 `;
-
+const MultiColorText = styled.span`
+    color: var(--primary-200);
+    font-weight: bold;
+`;
 const ButtonWrapper = styled.div`
     margin: 0 auto;
     max-width: 27rem;
@@ -44,7 +46,9 @@ const Services = () => {
         <SectionBase>
             <FeaturesTextWrapper>
                 <Title variant="h1" weight="bold">
-                    Unlimited Project Subscription Service
+                    Hi! My name is<br></br>
+                    <MultiColorText> Rukshona Radjabova</MultiColorText>
+                    <br></br>Full stack software engineer
                 </Title>
                 <Description variant="paragraphSM" weight="medium">
                     Get unlimited custom designes for your business needs with
