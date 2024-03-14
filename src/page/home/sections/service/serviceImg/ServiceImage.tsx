@@ -48,7 +48,7 @@ interface ToolBarProps {
     tools: Tool[];
 }
 const ToolbarTitle = styled(Typography)`
-    color: var(--light-green-900);
+    color: var(--jaguar-700);
     display: flex;
     justify-content: center;
 `;
