@@ -8,8 +8,9 @@ const StyledSVG = styled.svg<{ spread: boolean }>`
     ${(props) =>
         props.spread &&
         css`
-             border-radius:var( --border-radius-32)
+            border-radius:var( --border-radius-32)
             transform: scale(1.2);
+            
         `}
 `;
 

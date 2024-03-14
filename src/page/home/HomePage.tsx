@@ -7,10 +7,10 @@ import { ServiceDescription } from "./sections/service/ServiceDescription";
 import waveLine from "../../assets/waveborder.png";
 import { ToolsBar } from "./sections/service/serviceImg/ServiceImage";
 const Base = styled.div`
+    padding-bottom: 10rem;
     max-width: 192rem;
     margin: 0 auto;
-    background-color: var(--dodger-blue-100);
-    height: 165rem;
+    background-color: var(--green-25);
 `;
 
 // Keyframes for animation
