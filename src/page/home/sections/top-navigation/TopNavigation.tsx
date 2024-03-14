@@ -23,16 +23,20 @@ const HeaderBase = styled.header`
     justify-content: space-between;
     align-items: center;
     border: 0.5px solid black;
-    width: 100%;
-    padding: 2rem 5rem;
+    width: 80%;
     position: fixed;
     top: 60px;
     left: 50%;
     transform: translateX(-50%);
     max-width: 142rem;
     background-color: white;
-    border-radius: var(--space-40);
+    border-radius: var(--border-radius-40);
     z-index: 1000;
+    min-width: 37rem;
+    padding: var(--space-24);
+    background-color: var(--white);
+    box-shadow: var(--shadow-3xl);
+    transition: all 0.5s;
 `;
 
 const Buttons = styled.div`
