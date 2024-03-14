@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import logo from "../../../../assets/logo.png";
 import { Button } from "../../../../design-system";
 import { Typography } from "../../../../design-system/Typography";
 const links = [
@@ -43,18 +43,24 @@ const Buttons = styled.div`
     display: flex;
 `;
 const MultiColorText = styled.span`
-    color: var(--primary-300);
+    color: var(--green-200);
     font-weight: bold;
 `;
-const Logo = styled(Typography)`
-    color: var(--jaguard-200);
-`;
 
+const MainLogo = styled.div`
+    img {
+        height: var(--space-48);
+        width: var(--space-48);
+    }
+`;
 const TopNavigation = () => {
     return (
         <HeaderBase>
+            <MainLogo>
+                <img src={logo} alt="" />
+            </MainLogo>
             <Typography variant="h5" weight="bold">
-                Port<MultiColorText>folio</MultiColorText>
+                Ruk<MultiColorText>shona</MultiColorText>
             </Typography>
             <StyledLink>
                 {links.map((link, index) => (
