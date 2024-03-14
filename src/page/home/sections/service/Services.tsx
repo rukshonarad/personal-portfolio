@@ -19,6 +19,7 @@ const FeaturesTextWrapper = styled.div`
 
 const Title = styled(Typography)`
     margin-bottom: var(--space-30);
+    color: var(--jaguar-700);
 `;
 
 const Description = styled(Typography)`
@@ -29,23 +30,15 @@ const Description = styled(Typography)`
     margin-bottom: var(--space-30);
 `;
 const MultiColorText = styled.span`
-    color: var(--primary-200);
+    color: var(--primary-300);
     font-weight: bold;
-`;
-const ButtonWrapper = styled.div`
-    margin: 0 auto;
-    max-width: 27rem;
-
-    Button {
-        margin: 0 auto;
-    }
 `;
 
 const Services = () => {
     return (
         <SectionBase>
             <FeaturesTextWrapper>
-                <Title variant="h1" weight="bold">
+                <Title variant="h1" weight="medium">
                     Hi! My name is<br></br>
                     <MultiColorText> Rukshona Radjabova</MultiColorText>
                     <br></br>Full stack software engineer
@@ -58,12 +51,6 @@ const Services = () => {
                     marketing and advertising needs
                 </Description>
             </FeaturesTextWrapper>
-
-            <ButtonWrapper>
-                <Button size="sm" shape="rounded" onClick={() => {}}>
-                    View Pricing
-                </Button>
-            </ButtonWrapper>
         </SectionBase>
     );
 };

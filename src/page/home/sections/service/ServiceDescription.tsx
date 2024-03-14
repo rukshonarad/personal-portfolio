@@ -5,7 +5,7 @@ import forward from "../../../../assets/forward 1.png";
 import upload from "../../../../assets/upload 1.png";
 import designe from "../../../../assets/img.png";
 import infinite from "../../../../assets/infinite 1.png";
-import { ServiceImage } from "./ServiceImage";
+// import { ServiceImage } from "./serviceImg/ServiceImage";
 // import { FeaturesCard } from "./featuresCard";
 // import { features } from "./featuresCard/features";
 
@@ -32,8 +32,8 @@ const Title = styled(Typography)`
 const ImageWrapper = styled.section`
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centering items */
-    gap: 2rem; /* Adjusting gap */
+    justify-content: center;
+    gap: 2rem;
     img {
         height: auto;
         width: 10rem;
@@ -46,7 +46,6 @@ const ServiceDescription = () => {
                 <Title variant="h6" weight="bold">
                     How it works
                 </Title>
-                <ServiceImage />
             </DescriptionTextWrapper>
         </SectionBase>
     );

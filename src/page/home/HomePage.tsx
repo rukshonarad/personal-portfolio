@@ -5,6 +5,7 @@ import styled, { keyframes } from "styled-components";
 import { Services } from "./sections/service/Services";
 import { ServiceDescription } from "./sections/service/ServiceDescription";
 import waveLine from "../../assets/waveborder.png";
+import { ToolsBar } from "./sections/service/serviceImg/ServiceImage";
 const Base = styled.div`
     max-width: 192rem;
     margin: 0 auto;
@@ -46,8 +47,7 @@ const HomePage = () => {
         <Base>
             <TopNavigation />
             <Services />
-            <ServiceDescription />
-            <WaveLine src={waveLine} alt="" />
+            <ToolsBar />
         </Base>
     );
 };

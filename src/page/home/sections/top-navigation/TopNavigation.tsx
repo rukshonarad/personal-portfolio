@@ -23,14 +23,14 @@ const HeaderBase = styled.header`
     justify-content: space-between;
     align-items: center;
     border: 0.5px solid black;
-    width: 80%;
+    width: 76%;
     position: fixed;
     top: 60px;
     left: 50%;
     transform: translateX(-50%);
     max-width: 142rem;
     background-color: white;
-    border-radius: var(--border-radius-40);
+    border-radius: var(--border-radius-48);
     z-index: 1000;
     min-width: 37rem;
     padding: var(--space-24);
@@ -42,12 +42,19 @@ const HeaderBase = styled.header`
 const Buttons = styled.div`
     display: flex;
 `;
+const MultiColorText = styled.span`
+    color: var(--primary-300);
+    font-weight: bold;
+`;
+const Logo = styled(Typography)`
+    color: var(--jaguard-200);
+`;
 
 const TopNavigation = () => {
     return (
         <HeaderBase>
-            <Typography variant="paragraphLG" weight="bold">
-                Portfolio
+            <Typography variant="h5" weight="bold">
+                Port<MultiColorText>folio</MultiColorText>
             </Typography>
             <StyledLink>
                 {links.map((link, index) => (
