@@ -6,7 +6,7 @@ const links = [
     { text: "Home", link: "https://google.com" },
     { text: "About", link: "https://facebook.com" },
     { text: "Projects", link: "" },
-    { text: "Contact Me", link: "https://facebook.com" }
+    { text: "Hire Me", link: "https://facebook.com" }
 ];
 const StyledLink = styled.nav`
     color: var(--jaguar-900);
@@ -42,26 +42,20 @@ const HeaderBase = styled.header`
 const Buttons = styled.div`
     display: flex;
 `;
-const MultiColorText = styled.span`
-    color: var(--green-200);
-    font-weight: bold;
-`;
 
 const MainLogo = styled.div`
     img {
         height: var(--space-48);
         width: var(--space-48);
+        margin-left: var(--space-30);
     }
 `;
 const TopNavigation = () => {
     return (
         <HeaderBase>
             <MainLogo>
-                <img src={logo} alt="" />
+                <img src={logo} alt="logo" />
             </MainLogo>
-            <Typography variant="h5" weight="bold">
-                Ruk<MultiColorText>shona</MultiColorText>
-            </Typography>
             <StyledLink>
                 {links.map((link, index) => (
                     <a key={index} href={link.link}>
@@ -72,11 +66,11 @@ const TopNavigation = () => {
             <Buttons>
                 <Button
                     variant="outlined"
-                    size="sm"
+                    size="md"
                     shape="rounded"
                     onClick={() => {}}
                 >
-                    Hire Me
+                    Download CV
                 </Button>
             </Buttons>
         </HeaderBase>

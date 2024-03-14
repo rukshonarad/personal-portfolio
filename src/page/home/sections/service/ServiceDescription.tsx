@@ -1,17 +1,10 @@
 import styled from "styled-components";
-import { Button } from "../../../../design-system";
+
 import { Typography } from "../../../../design-system/Typography";
-import forward from "../../../../assets/forward 1.png";
-import upload from "../../../../assets/upload 1.png";
-import designe from "../../../../assets/img.png";
-import infinite from "../../../../assets/infinite 1.png";
-// import { ServiceImage } from "./serviceImg/ServiceImage";
-// import { FeaturesCard } from "./featuresCard";
-// import { features } from "./featuresCard/features";
 
 const SectionBase = styled.section`
     max-width: calc(100% - 500px);
-    padding: 5rem 5rem;
+
     background-color: white;
     width: 142rem;
     border-radius: var(--space-80);

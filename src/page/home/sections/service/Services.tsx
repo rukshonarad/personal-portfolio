@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { Button } from "../../../../design-system";
 import { Typography } from "../../../../design-system/Typography";
-// import { FeaturesCard } from "./featuresCard";
-// import { features } from "./featuresCard/features";
 
 const SectionBase = styled.section`
     max-width: 192rem;
@@ -38,17 +36,14 @@ const Services = () => {
     return (
         <SectionBase>
             <FeaturesTextWrapper>
-                <Title variant="h1" weight="medium">
+                <Title variant="h2" weight="medium">
                     Hi! My name is<br></br>
                     <MultiColorText> Rukshona Radjabova</MultiColorText>
                     <br></br>Full stack software engineer
                 </Title>
                 <Description variant="paragraphSM" weight="medium">
-                    Get unlimited custom designes for your business needs with
-                    an Unlimited Design Subscription Service. With a monthly
-                    subscription access to team of skilled designers &
-                    developers who can create designes for your branding,
-                    marketing and advertising needs
+                    Presenting unique and creative software solutions for a
+                    variety of challenges and needs.
                 </Description>
             </FeaturesTextWrapper>
         </SectionBase>

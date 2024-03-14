@@ -8,7 +8,7 @@ import { Typography } from "../../../../../design-system/Typography";
 
 const ToolBarWrapper = styled(Container)`
     width: 100rem;
-    padding: 6rem 3rem;
+    padding: 4rem 3rem;
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
@@ -33,7 +33,7 @@ const ToolBox = styled.div`
     display: flex;
     align-items: center;
     &:hover {
-        transform: scale(1.5);
+        transform: scale(1.1);
         transition: all 0.3s;
     }
 `;
