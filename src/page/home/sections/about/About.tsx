@@ -34,7 +34,7 @@ const ImageWrapper = styled.div`
     }
     img {
         object-fit: contain;
-        border-radius: 50%;
+        border-radius: var(--space-40) 0 var(--space-40);
         height: 45rem;
         width: auto;
     }
