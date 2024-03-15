@@ -5,7 +5,7 @@ import { Typography } from "../../../../design-system/Typography";
 import { Icon } from "../../../../design-system/icon";
 
 import me from "../../../../assets/me.png";
-
+import { motion } from "framer-motion";
 const info = {
     bio: "Hello, I'm Rukshona, a full-stack developer based in New York with over a year of experience. Passionate about crafting seamless digital experiences, I thrive on bringing innovative ideas to life through code. From backend logic to captivating frontend interfaces, I specialize in creating dynamic web solutions that engage and inspire users.",
     fullName: "Rukhshona Radjabova",
@@ -70,14 +70,30 @@ const About = () => {
     return (
         <BaseContainer>
             <AboutContent>
-                <ImageWrapper>
-                    <img src={me} alt="" />
-                </ImageWrapper>
+                <motion.div
+                    initial={{ opacity: 1, scale: 0.5 }}
+                    transition={{ duration: 1 }}
+                    animate={{ opacity: 1, x: 5 }}
+                    whileInView={{ opacity: 2, scale: 1 }}
+                >
+                    <ImageWrapper>
+                        <img src={me} alt="" />
+                    </ImageWrapper>
+                </motion.div>
+
                 <AboutTextWrapper>
                     <Title variant="h3">
                         About <span>Me</span>
                     </Title>
-                    <Bio variant="paragraphLG">{info.bio}</Bio>
+                    <motion.div
+                        initial={{ opacity: 1, scale: 0.5 }}
+                        transition={{ duration: 1 }}
+                        animate={{ opacity: 1, x: 5 }}
+                        whileInView={{ opacity: 2, scale: 1 }}
+                    >
+                        <Bio variant="paragraphLG">{info.bio}</Bio>
+                    </motion.div>
+
                     <Buttons>Contact Me</Buttons>
                 </AboutTextWrapper>
             </AboutContent>
