@@ -72,7 +72,7 @@ const About = () => {
             <AboutContent>
                 <motion.div
                     initial={{ opacity: 1, scale: 0.5 }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 3 }}
                     animate={{ opacity: 1, x: 5 }}
                     whileInView={{ opacity: 2, scale: 1 }}
                 >
@@ -87,7 +87,7 @@ const About = () => {
                     </Title>
                     <motion.div
                         initial={{ opacity: 1, scale: 0.5 }}
-                        transition={{ duration: 1 }}
+                        transition={{ duration: 3 }}
                         animate={{ opacity: 1, x: 5 }}
                         whileInView={{ opacity: 2, scale: 1 }}
                     >

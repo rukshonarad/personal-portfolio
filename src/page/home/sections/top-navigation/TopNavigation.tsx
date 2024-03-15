@@ -29,7 +29,7 @@ const HeaderBase = styled.header`
     border: 0.5px solid black;
     width: 76%;
     position: fixed;
-    top: 60px;
+    top: 50px;
     left: 50%;
     transform: translateX(-50%);
     max-width: 142rem;
