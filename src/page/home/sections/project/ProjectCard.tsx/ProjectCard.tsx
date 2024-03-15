@@ -7,75 +7,86 @@ type Project = {
     description: string;
     githubLink: string;
     demoLink: string;
+    info: string;
 };
 
 type ProjectCardProps = {
     project: Project;
 };
 
-const ProjectCardBase = styled.div`
-    gap: var(--space-16);
-
-    display: flex;
-    overflow-x: auto;
-`;
-
 const ProjectCard = styled.div<{ name: string }>`
-    width: 30%;
-    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    gap: 3rem;
     align-items: center;
-
+    justify-content: space-around;
+    height: 30rem;
+    background-color: white;
+    align-items: center;
+    margin: 0 auto;
     border-radius: var(--border-radius-40);
     box-shadow: var(--shadow-3xl);
+    padding: var(--space-20) var(--space-40);
     margin-bottom: var(--space-30);
-`;
 
-const ProjectTextWrapper = styled.div`
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-`;
-
-const ProjectName = styled(Typography)`
-    margin-bottom: var(--space-12);
-`;
-
-const ProjectDescription = styled(Typography)`
-    margin-bottom: var(--space-12);
-`;
-
-const ProjectImageWrapper = styled.div`
-    overflow: hidden;
-    img {
-        object-fit: cover;
-        height: 30rem;
+    &:hover {
+        transform: scale(1.1);
+        transition: all 1s;
     }
 `;
 
+const ProjectName = styled(Typography)`
+    margin-bottom: var(--space-8);
+    margin: 0 auto;
+
+    margin-bottom: 1rem;
+`;
+
+const ProjectDescription = styled(Typography)`
+    margin-bottom: 1rem;
+`;
+const ButtonWrapper = styled.div`
+    margin: 0 auto;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-8);
+    Button {
+        &:hover {
+            background-color: var(--primary-100);
+        }
+    }
+`;
 const ProjectCards = ({ project }: ProjectCardProps) => {
     return (
-        <ProjectCardBase>
-            <ProjectCard name={project.name}>
-                <ProjectTextWrapper>
-                    <ProjectName variant="h5" weight="semibold">
-                        {project.name}
-                    </ProjectName>
-                    <ProjectDescription variant="paragraphMD">
-                        {project.description}
-                    </ProjectDescription>
-                    <a href={project.githubLink}>
-                        <Button size="md" variant="outlined" shape="rounded">
-                            GitHub Link
-                        </Button>
-                    </a>
-                </ProjectTextWrapper>
-                <ProjectImageWrapper>
-                    <img src={project.image} alt="Project" />
-                </ProjectImageWrapper>
-            </ProjectCard>
-        </ProjectCardBase>
+        <ProjectCard name={project.name}>
+            <ProjectName variant="paragraphMD" weight="semibold">
+                {project.name}
+            </ProjectName>
+            <ProjectDescription variant="subtitleLG">
+                {project.description}
+            </ProjectDescription>
+
+            <ButtonWrapper>
+                <a href={project.githubLink}>
+                    <Button size="sm" variant="outlined" shape="rounded">
+                        GitHub Link
+                    </Button>
+                </a>
+            </ButtonWrapper>
+            <ButtonWrapper>
+                <a href={project.demoLink}>
+                    <Button size="sm" variant="contained" shape="rounded">
+                        Try demo
+                    </Button>
+                </a>
+            </ButtonWrapper>
+            <ButtonWrapper>
+                <a href={project.info}>
+                    <Button size="sm" variant="outlined" shape="rounded">
+                        Info
+                    </Button>
+                </a>
+            </ButtonWrapper>
+        </ProjectCard>
     );
 };
 

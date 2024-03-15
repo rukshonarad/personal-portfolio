@@ -6,7 +6,7 @@ const links = [
     { text: "Home", link: "https://google.com" },
     { text: "About", link: "https://facebook.com" },
     { text: "Projects", link: "" },
-    { text: "Hire Me", link: "https://facebook.com" }
+    { text: "Get In Touch", link: "https://facebook.com" }
 ];
 const StyledLink = styled.nav`
     color: var(--jaguar-900);

@@ -61,6 +61,9 @@ const Buttons = styled(Button)`
     display: flex;
     margin-bottom: var(--space-40);
     margin: 0 auto;
+    &:hover {
+        background-color: var(--primary-100);
+    }
 `;
 
 const About = () => {

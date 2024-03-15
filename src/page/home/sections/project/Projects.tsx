@@ -11,6 +11,7 @@ const SectionBase = styled(Container)`
 
 const Title = styled(Typography)`
     color: var(--jaguar-900);
+    margin-bottom: var(--space-40);
 `;
 
 const ProjectCardsWrapper = styled.div`
