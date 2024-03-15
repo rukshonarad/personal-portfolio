@@ -2,6 +2,7 @@ import { Service } from "./sections/service/ServiceWrapper";
 import styled from "styled-components";
 import { About } from "./sections/about/About";
 import { Projects } from "./sections/project/Projects";
+import { HireMe } from "./sections/hire-me/HireMe";
 
 const Base = styled.div`
     padding-bottom: 10rem;
@@ -16,6 +17,7 @@ const HomePage = () => {
             <Service></Service>
             <About></About>
             <Projects></Projects>
+            <HireMe></HireMe>
         </Base>
     );
 };

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Button } from "../../../../design-system";
 import { Typography } from "../../../../design-system/Typography";
+import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 const SectionBase = styled.section`
     max-width: 192rem;
@@ -37,28 +38,19 @@ const Services = () => {
     return (
         <SectionBase>
             <FeaturesTextWrapper>
-                <Title variant="h2" weight="medium">
-                    <StyledText>
-                        <Typewriter
-                            onInit={(str) => {
-                                str.typeString("Hi! My name is Rukshona!")
-                                    .pauseFor(3000)
-
-                                    .start();
-                            }}
-                        />
-                    </StyledText>
-                    <StyledTextSecond>
-                        <Typewriter
-                            onInit={(str) => {
-                                str.pauseFor(5000)
-                                    .typeString("Full stack software engineer")
-
-                                    .start();
-                            }}
-                        />
-                    </StyledTextSecond>
-                </Title>
+                <motion.div
+                    initial={{ opacity: 1, scale: 0.5 }}
+                    transition={{ duration: 2 }}
+                    animate={{ opacity: 1, x: 3, y: 1 }}
+                    whileInView={{ opacity: 2, scale: 1 }}
+                >
+                    <Title variant="h2" weight="bold">
+                        <StyledText>Hi! My Name Is Rukshona</StyledText>
+                        <StyledTextSecond>
+                            Full stack software engineer
+                        </StyledTextSecond>
+                    </Title>
+                </motion.div>
                 <Description variant="paragraphSM" weight="medium">
                     Presenting unique and creative software solutions for a
                     variety of challenges and needs.

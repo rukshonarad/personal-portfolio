@@ -52,6 +52,7 @@ const ToolbarTitle = styled(Typography)`
     display: flex;
     justify-content: center;
 `;
+
 const ToolBar: React.FC<ToolBarProps> = ({
     toolsFrontEnd,
     toolsBackend,
