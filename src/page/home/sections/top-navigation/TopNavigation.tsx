@@ -41,6 +41,11 @@ const HeaderBase = styled.header`
 
 const Buttons = styled.div`
     display: flex;
+    Button {
+        &:hover {
+            background-color: var(--primary-100);
+        }
+    }
 `;
 
 const MainLogo = styled.div`

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Button } from "../../../../design-system";
 import { Typography } from "../../../../design-system/Typography";
-
+import Typewriter from "typewriter-effect";
 const SectionBase = styled.section`
     max-width: 192rem;
     padding-top: var(--space-250);
@@ -27,19 +27,37 @@ const Description = styled(Typography)`
     margin: 0 auto;
     margin-bottom: var(--space-30);
 `;
-const MultiColorText = styled.span`
-    color: var(--primary-300);
-    font-weight: bold;
+const StyledText = styled.div`
+    color: var(--jaguard-100);
 `;
-
+const StyledTextSecond = styled.div`
+    color: var(--primary-100);
+`;
 const Services = () => {
     return (
         <SectionBase>
             <FeaturesTextWrapper>
                 <Title variant="h2" weight="medium">
-                    Hi! My name is<br></br>
-                    <MultiColorText> Rukshona Radjabova</MultiColorText>
-                    <br></br>Full stack software engineer
+                    <StyledText>
+                        <Typewriter
+                            onInit={(str) => {
+                                str.typeString("Hi! My name is Rukshona!")
+                                    .pauseFor(3000)
+
+                                    .start();
+                            }}
+                        />
+                    </StyledText>
+                    <StyledTextSecond>
+                        <Typewriter
+                            onInit={(str) => {
+                                str.pauseFor(5000)
+                                    .typeString("Full stack software engineer")
+
+                                    .start();
+                            }}
+                        />
+                    </StyledTextSecond>
                 </Title>
                 <Description variant="paragraphSM" weight="medium">
                     Presenting unique and creative software solutions for a
