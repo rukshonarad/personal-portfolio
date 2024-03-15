@@ -12,10 +12,14 @@ const StyledLink = styled.nav`
     color: var(--jaguar-900);
     font-weight: var(--font-weight-500);
     a {
+        margin: 0 auto;
         color: var(--jaguar-900);
         font-weight: var(--font-weight-800);
-        margin-right: 3rem;
+        margin-right: 4rem;
         font-size: var(--font-size-20);
+        &:hover {
+            color: var(--primary-100);
+        }
     }
 `;
 const HeaderBase = styled.header`
