@@ -1,7 +1,7 @@
 import { Tool } from "./types";
 
 export const tools: Tool[] = [
-    { icon: "javascript", title: "JavaScript" },
+    { title: "JavaScript", icon: "javascript" },
     { title: "TypeScript", icon: "typescript" },
     { title: "HTML", icon: "html" },
     { title: "React", icon: "react" },

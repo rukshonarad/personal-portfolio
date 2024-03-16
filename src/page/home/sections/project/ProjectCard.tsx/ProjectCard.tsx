@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { Button, Typography } from "../../../../../design-system";
-
+import { useState } from "react";
+import github from "../../../../../assets/github.png";
+import demo from "../../../../../assets/demo.png";
+import info from "../../../../../assets/information.png";
 type Project = {
     image: string;
     name: string;
@@ -14,93 +17,99 @@ type ProjectCardProps = {
     project: Project;
 };
 
-const ProjectCard = styled.div<{ backgroundImg: string }>`
-    width: 90%;
-    gap: 3rem;
-    align-items: center;
-    justify-content: space-around;
-    height: 30rem;
-    background-image: url(${(props) => props.backgroundImg});
-    align-items: center;
+const ProjectCardWrapper = styled.div`
     display: flex;
+    justify-content: space-between;
+    gap: var(--space-30);
+    margin-bottom: var(--space-30);
+`;
+
+const ProjectCard = styled.div`
+    width: calc(33.333% - var(--space-20));
     border-radius: var(--border-radius-40);
     box-shadow: var(--shadow-3xl);
-    padding: var(--space-20) var(--space-40);
-    margin-bottom: var(--space-30);
+    padding: var(--space-30) var(--space-30);
+    position: relative;
 
+    transition: opacity 0.3s;
     &:hover {
-        transform: scale(1.1);
-        transition: all 1s;
+        opacity: 0.5;
     }
 `;
 
 const ProjectName = styled(Typography)`
-    margin-bottom: var(--space-8);
     margin: 0 auto;
-    margin-bottom: 1rem;
 `;
 
-const ProjectDescription = styled(Typography)`
-    margin-bottom: 1rem;
+const ProjectDescription = styled(Typography)``;
+
+const ButtonWrapper = styled.div<{ isVisible: boolean }>`
+    display: ${({ isVisible }) => (isVisible ? "flex" : "none")};
+    position: absolute;
+    bottom: var(--space-72);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--space-20);
+
+    border-radius: var(--border-radius-20);
+    z-index: 2;
+    gap: var(--space-10);
 `;
+
 const ProjectImg = styled.div`
+    text-align: center;
+`;
+
+const ProjectImage = styled.img`
+    max-width: 100%;
+    border-radius: var(--border-radius-36);
+`;
+const Buttons = styled(Button)`
+    background-color: none;
+    z-index: 2;
     img {
-        height: 15rem;
-        width: auto;
-        display: flex;
-    }
-`;
-const Wrapper = styled.div`
-    display: flex;
-`;
-const ImageWrapper = styled.div`
-    img {
-        width: 100%;
-    }
-`;
-const ButtonWrapper = styled.div`
-    margin: 0 auto;
-    flex-wrap: wrap;
-    margin-bottom: var(--space-8);
-    Button {
-        &:hover {
-            background-color: var(--primary-100);
-        }
+        width: 3rem;
+        z-index: 1;
+        height: auto;
     }
 `;
 const ProjectCards = ({ project }: ProjectCardProps) => {
+    const [isButtonVisible, setIsButtonVisible] = useState(false);
+
     return (
-        <Wrapper>
-            <ProjectCard backgroundImg={project.image}>
+        <ProjectCardWrapper>
+            <ProjectCard
+                onMouseEnter={() => setIsButtonVisible(true)}
+                onMouseLeave={() => setIsButtonVisible(false)}
+            >
                 <ProjectName variant="paragraphMD" weight="semibold">
                     {project.name}
                 </ProjectName>
                 <ProjectDescription variant="subtitleLG">
                     {project.description}
                 </ProjectDescription>
-                <ButtonWrapper>
+                <ProjectImg>
+                    <ProjectImage src={project.image} alt="Project" />
+                </ProjectImg>
+                <ButtonWrapper isVisible={isButtonVisible}>
                     <a href={project.githubLink}>
-                        <Button size="sm" variant="outlined" shape="rounded">
-                            GitHub Link
-                        </Button>
+                        <Buttons>
+                            <img src={github} alt="github" />
+                        </Buttons>
                     </a>
-                </ButtonWrapper>
-                <ButtonWrapper>
                     <a href={project.demoLink}>
-                        <Button size="sm" variant="contained" shape="rounded">
-                            Try demo
-                        </Button>
+                        <Buttons>
+                            <img src={demo} alt="demo" />
+                        </Buttons>
                     </a>
-                </ButtonWrapper>
-                <ButtonWrapper>
                     <a href={project.info}>
-                        <Button size="sm" variant="outlined" shape="rounded">
-                            Info
-                        </Button>
+                        <Buttons>
+                            <img src={info} alt="info" />
+                        </Buttons>
                     </a>
                 </ButtonWrapper>
             </ProjectCard>
-        </Wrapper>
+        </ProjectCardWrapper>
     );
 };
 

@@ -2,11 +2,15 @@ import styled from "styled-components";
 import { Typography } from "../../../../design-system";
 import { ProjectCards } from "./ProjectCard.tsx";
 import { projects } from "./ProjectCard.tsx/data";
-import { Container } from "../../../components";
 
-const SectionBase = styled(Container)`
-    padding-top: 15rem;
-    padding-bottom: 15rem;
+const SectionBase = styled.div`
+    margin: 0 auto;
+    max-width: 190rem;
+    padding: 2.5rem 20rem;
+    /* height: 100vh; */
+    position: relative;
+    padding-top: var(--space-250);
+    background-color: var(--purple-12);
 `;
 
 const Title = styled(Typography)`
@@ -14,19 +18,13 @@ const Title = styled(Typography)`
     margin-bottom: var(--space-40);
 `;
 
-const ProjectCardsWrapper = styled.div`
-    row-gap: var(--space-20);
-`;
-
 const Projects = () => {
     return (
         <SectionBase>
             <Title variant="h3">Projects</Title>
-            <ProjectCardsWrapper>
-                {projects.map((project, index) => (
-                    <ProjectCards key={index} project={project} />
-                ))}
-            </ProjectCardsWrapper>
+            {projects.map((project, index) => (
+                <ProjectCards key={index} project={project} />
+            ))}
         </SectionBase>
     );
 };

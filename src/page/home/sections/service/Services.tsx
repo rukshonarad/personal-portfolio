@@ -3,6 +3,7 @@ import { Button } from "../../../../design-system";
 import { Typography } from "../../../../design-system/Typography";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
+
 const SectionBase = styled.section`
     max-width: 192rem;
     padding-top: var(--space-250);
@@ -10,30 +11,32 @@ const SectionBase = styled.section`
 `;
 
 const FeaturesTextWrapper = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-50);
     text-align: center;
-    margin-bottom: var(--space-50);
-    width: 70%;
     margin: 0 auto;
+    max-width: 70%;
 `;
 
 const Title = styled(Typography)`
-    margin-bottom: var(--space-30);
-    color: var(--jaguar-700);
+    color: var(--jaguar-400);
 `;
 
 const Description = styled(Typography)`
-    color: var(--jaguar-500);
-    margin-bottom: var(--space-40);
-    width: 70%;
+    color: var(--jaguar-800);
     margin: 0 auto;
-    margin-bottom: var(--space-30);
+    margin-bottom: var(--space-50);
 `;
+
 const StyledText = styled.div`
     color: var(--jaguard-100);
 `;
+
 const StyledTextSecond = styled.div`
-    color: var(--primary-100);
+    color: var(--jaguar-800);
 `;
+
 const Services = () => {
     return (
         <SectionBase>
@@ -52,8 +55,14 @@ const Services = () => {
                     </Title>
                 </motion.div>
                 <Description variant="paragraphSM" weight="medium">
-                    Presenting unique and creative software solutions for a
-                    variety of challenges and needs.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Rem asperiores veniam cupiditate nemo consequatur, maiores
+                    tenetur, in nam quae omnis accusantium nisi expedita atque,
+                    illo ullam! Facere enim deserunt quaerat? Lorem ipsum dolor
+                    sit amet consectetur, adipisicing elit. In labore quisquam,
+                    ipsa esse optio atque facere qui doloremque aut quaerat
+                    reprehenderit commodi repellat quam, illo, sapiente odit
+                    maxime cum culpa.
                 </Description>
             </FeaturesTextWrapper>
         </SectionBase>

@@ -20,7 +20,8 @@ const Form = styled.form`
 const ContainerWrapper = styled(Container)`
     display: flex;
     position: relative;
-    background-color: #f6f7fb;
+    padding-top: var(--space-250);
+    background-color: var(--primary-25);
 `;
 const ContainerHolder = styled.div`
     display: flex;

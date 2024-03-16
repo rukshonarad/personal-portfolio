@@ -5,7 +5,6 @@ import { Projects } from "./sections/project/Projects";
 import { HireMe } from "./sections/hire-me/HireMe";
 
 const Base = styled.div`
-    padding-bottom: 10rem;
     max-width: 192rem;
     margin: 0 auto;
     background-color: var(--green-25);

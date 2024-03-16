@@ -22,7 +22,7 @@ const scrollRightToLeft = keyframes`
 
 const ToolIconsContainer = styled.div`
     display: flex;
-    animation: ${scrollRightToLeft} 20s linear infinite;
+    animation: ${scrollRightToLeft} 10s linear infinite;
 `;
 
 const StyledIcon = styled(Icon)`

@@ -6,6 +6,7 @@ import { Icon } from "../../../../design-system/icon";
 
 import me from "../../../../assets/me.png";
 import { motion } from "framer-motion";
+
 const info = {
     bio: "Hello, I'm Rukshona, a full-stack developer based in New York with over a year of experience. Passionate about crafting seamless digital experiences, I thrive on bringing innovative ideas to life through code. From backend logic to captivating frontend interfaces, I specialize in creating dynamic web solutions that engage and inspire users.",
     fullName: "Rukhshona Radjabova",
@@ -17,12 +18,14 @@ const info = {
 
 const BaseContainer = styled(Container)`
     position: relative;
-    background-color: #f6f7fb;
+    padding-top: var(--space-250);
+    background-color: var(--primary-25);
 `;
 
 const AboutContent = styled.div`
-    display: flex;
-    gap: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-50);
 `;
 
 const ImageWrapper = styled.div`
@@ -41,7 +44,7 @@ const ImageWrapper = styled.div`
 `;
 
 const AboutTextWrapper = styled.div`
-    width: 50%;
+    width: 100%;
 `;
 
 const Title = styled(Typography)`
@@ -59,13 +62,23 @@ const Bio = styled(Typography)`
 
 const Buttons = styled(Button)`
     display: flex;
-    margin-bottom: var(--space-40);
     margin: 0 auto;
     &:hover {
         background-color: var(--primary-100);
+        color: white;
     }
 `;
+const Info = styled(Typography)`
+    display: flex;
 
+    span {
+        font-weight: bold;
+        margin-right: var(--space-8);
+    }
+`;
+const TextWrapper = styled.div`
+    margin-bottom: var(--space-16);
+`;
 const About = () => {
     return (
         <BaseContainer>
@@ -91,7 +104,21 @@ const About = () => {
                         animate={{ opacity: 1, x: 5 }}
                         whileInView={{ opacity: 2, scale: 1 }}
                     >
-                        <Bio variant="paragraphLG">{info.bio}</Bio>
+                        <TextWrapper>
+                            <Bio variant="paragraphMD">{info.bio}</Bio>
+                            <Info variant="paragraphSM">
+                                <span>Name:</span> {info.fullName}
+                            </Info>
+                            <Info variant="paragraphSM">
+                                <span>Age:</span> {info.age}
+                            </Info>
+                            <Info variant="paragraphSM">
+                                <span>Email:</span> {info.email}
+                            </Info>
+                            <Info variant="paragraphSM">
+                                <span>Phone:</span> {info.phone}
+                            </Info>
+                        </TextWrapper>
                     </motion.div>
 
                     <Buttons>Contact Me</Buttons>
