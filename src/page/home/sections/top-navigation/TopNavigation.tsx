@@ -43,15 +43,6 @@ const HeaderBase = styled.header`
     transition: all 0.5s;
 `;
 
-const Buttons = styled.div`
-    display: flex;
-    Button {
-        &:hover {
-            background-color: var(--primary-100);
-        }
-    }
-`;
-
 const MainLogo = styled.div`
     img {
         height: var(--space-48);
@@ -72,16 +63,15 @@ const TopNavigation = () => {
                     </a>
                 ))}
             </StyledLink>
-            <Buttons>
-                <Button
-                    variant="outlined"
-                    size="md"
-                    shape="rounded"
-                    onClick={() => {}}
-                >
-                    Download CV
-                </Button>
-            </Buttons>
+
+            <Button
+                variant="outlined"
+                size="lg"
+                shape="rounded"
+                onClick={() => {}}
+            >
+                Download CV
+            </Button>
         </HeaderBase>
     );
 };
