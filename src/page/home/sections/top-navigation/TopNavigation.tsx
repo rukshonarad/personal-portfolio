@@ -9,7 +9,7 @@ const links = [
     { text: "Hire Me", link: "https://facebook.com" }
 ];
 const StyledLink = styled.nav`
-    color: var(--jaguar-900);
+    color: var(--jaguar-700);
     font-weight: var(--font-weight-500);
     a {
         margin: 0 auto;
@@ -18,7 +18,7 @@ const StyledLink = styled.nav`
         margin-right: 4rem;
         font-size: var(--font-size-20);
         &:hover {
-            color: var(--primary-100);
+            transform: scale(1.1);
         }
     }
 `;
@@ -47,7 +47,7 @@ const MainLogo = styled.div`
     img {
         height: var(--space-48);
         width: var(--space-48);
-        margin-left: var(--space-30);
+        margin-left: var(--space-40);
     }
 `;
 const TopNavigation = () => {
