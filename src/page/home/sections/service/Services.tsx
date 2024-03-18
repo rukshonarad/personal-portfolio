@@ -26,7 +26,7 @@ const Title = styled(Typography)`
 const Description = styled(Typography)`
     color: var(--jaguar-800);
     margin: 0 auto;
-    margin-bottom: var(--space-50);
+    width: 50%;
 `;
 
 const StyledText = styled.div`
@@ -55,14 +55,10 @@ const Services = () => {
                     </Title>
                 </motion.div>
                 <Description variant="paragraphSM" weight="medium">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Rem asperiores veniam cupiditate nemo consequatur, maiores
-                    tenetur, in nam quae omnis accusantium nisi expedita atque,
-                    illo ullam! Facere enim deserunt quaerat? Lorem ipsum dolor
-                    sit amet consectetur, adipisicing elit. In labore quisquam,
-                    ipsa esse optio atque facere qui doloremque aut quaerat
-                    reprehenderit commodi repellat quam, illo, sapiente odit
-                    maxime cum culpa.
+                    I am experienced in using databases, version control
+                    systems, and deployment technologies to ensure seamless
+                    integration and functionality across the entire software
+                    stack
                 </Description>
             </FeaturesTextWrapper>
         </SectionBase>
