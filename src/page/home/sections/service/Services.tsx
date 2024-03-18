@@ -54,7 +54,7 @@ const Services = () => {
                         </StyledTextSecond>
                     </Title>
                 </motion.div>
-                <Description variant="paragraphSM" weight="medium">
+                <Description variant="subtitleMD" weight="medium">
                     I am experienced in using databases, version control
                     systems, and deployment technologies to ensure seamless
                     integration and functionality across the entire software
