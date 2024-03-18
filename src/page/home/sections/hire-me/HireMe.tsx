@@ -20,7 +20,8 @@ const Form = styled.form`
 const ContainerWrapper = styled(Container)`
     display: flex;
     position: relative;
-    padding-top: var(--space-250);
+    padding-top: 22rem;
+
     background-color: var(--primary-25);
 `;
 const ContainerHolder = styled.div`
@@ -34,13 +35,13 @@ const InfoWrapper = styled.div`
     width: 50%;
     margin: 0 auto;
 `;
+const Header = styled(Typography)`
+    margin-bottom: var(--space-40);
+`;
 const Buttons = styled(Button)`
     display: flex;
     margin-bottom: var(--space-40);
     margin: 0 auto;
-    &:hover {
-        background-color: var(--primary-100);
-    }
 `;
 
 const HireMe = () => {
@@ -93,13 +94,12 @@ const HireMe = () => {
                     <motion.div
                         initial={{ opacity: 1, scale: 0.5 }}
                         transition={{ duration: 2 }}
-                        animate={{ opacity: 1, x: 100, y: 100 }}
+                        animate={{ opacity: 1, x: 10, y: 10 }}
                         whileInView={{ opacity: 2, scale: 1 }}
                     >
-                        <Typography variant="h3" weight="semibold">
+                        <Header variant="h3" weight="semibold">
                             Hire Me
-                        </Typography>
-
+                        </Header>
                         <Typography variant="paragraphSM">
                             Lorem ipsum dolor sit amet, consectetur adipisicing
                             elit. Excepturi minus deleniti earum odio adipisci
@@ -110,60 +110,63 @@ const HireMe = () => {
                     </motion.div>
                 </InfoWrapper>
                 <FormWrapper>
-                    <Form onSubmit={sendMessage}>
-                        <Input
-                            type="text"
-                            placeholder="Full Name"
-                            value={fullName}
-                            onChange={handleOnChangeFullName}
-                            shape="rounded"
-                            size="lg"
-                            className="full__name"
-                            disabled={isFormSubmitting}
-                        />
-                        <Input
-                            type="tel"
-                            placeholder="(123)456-7890"
-                            value={phoneNumber}
-                            onChange={handleOnChangePhoneNumber}
-                            shape="rounded"
-                            size="lg"
-                            className="phone__number"
-                            disabled={isFormSubmitting}
-                        />
-
-                        <Input
-                            type="email"
-                            placeholder="a@example.com"
-                            value={email}
-                            onChange={handleOnChangeEmail}
-                            shape="rounded"
-                            size="lg"
-                            className="email"
-                            disabled={isFormSubmitting}
-                        />
-                        <Input
-                            type="textarea"
-                            placeholder="Message"
-                            value={textArea}
-                            onChange={handleOnChangeTextArea}
-                            shape="rounded"
-                            size="lg"
-                            className="textarea"
-                            disabled={isFormSubmitting}
-                        />
-
-                        <Buttons
-                            className="button"
-                            // disabled={isFormSubmitting || !isFormSubmittable}
-                        >
-                            Send Message
-                        </Buttons>
-                    </Form>
                     <motion.div
-                        animate={{ opacity: 0 }}
-                        transition={{ duration: 2000 }}
-                    ></motion.div>
+                        initial={{ opacity: 1, scale: 0.5 }}
+                        transition={{ duration: 2 }}
+                        animate={{ opacity: 1, x: 10, y: 10 }}
+                        whileInView={{ opacity: 2, scale: 1 }}
+                    >
+                        <Form onSubmit={sendMessage}>
+                            <Input
+                                type="text"
+                                placeholder="Full Name"
+                                value={fullName}
+                                onChange={handleOnChangeFullName}
+                                shape="rounded"
+                                size="lg"
+                                className="full__name"
+                                disabled={isFormSubmitting}
+                            />
+                            <Input
+                                type="tel"
+                                placeholder="(123)456-7890"
+                                value={phoneNumber}
+                                onChange={handleOnChangePhoneNumber}
+                                shape="rounded"
+                                size="lg"
+                                className="phone__number"
+                                disabled={isFormSubmitting}
+                            />
+
+                            <Input
+                                type="email"
+                                placeholder="a@example.com"
+                                value={email}
+                                onChange={handleOnChangeEmail}
+                                shape="rounded"
+                                size="lg"
+                                className="email"
+                                disabled={isFormSubmitting}
+                            />
+                            <Input
+                                type="textarea"
+                                placeholder="Message"
+                                value={textArea}
+                                onChange={handleOnChangeTextArea}
+                                shape="rounded"
+                                size="lg"
+                                className="textarea"
+                                disabled={isFormSubmitting}
+                            />
+
+                            <Buttons
+                                className="button"
+                                // disabled={isFormSubmitting || !isFormSubmittable}
+                            >
+                                Send Message
+                            </Buttons>
+                        </Form>
+                    </motion.div>
                 </FormWrapper>
             </ContainerHolder>
         </ContainerWrapper>
