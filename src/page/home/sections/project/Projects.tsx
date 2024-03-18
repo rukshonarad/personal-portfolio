@@ -9,7 +9,7 @@ const SectionBase = styled.div`
     padding: 2.5rem 20rem;
     /* height: 100vh; */
     position: relative;
-    padding-top: var(--space-250);
+    padding-top: 23rem;
     background-color: var(--purple-12);
 `;
 

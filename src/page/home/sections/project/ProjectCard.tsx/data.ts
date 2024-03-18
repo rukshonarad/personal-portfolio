@@ -22,7 +22,7 @@ export const projects = [
     {
         image: project2,
         name: "Furniture Website",
-        description: "E-commerce website",
+        description: "Informational and promotional website ",
         githubLink: "https://github.com/rukshonarad/furniture-website-react",
         demoLink: "http://localhost:3000/",
         info: "https://www.figma.com/file/e0MYFWFazJ2ImXcjoNm372/Projectify?type=design&node-id=43-524&mode=design&t=iZNUqtuElmiJXIzr-0"

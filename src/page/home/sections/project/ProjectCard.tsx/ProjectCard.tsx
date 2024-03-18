@@ -4,6 +4,7 @@ import { useState } from "react";
 import github from "../../../../../assets/github.png";
 import demo from "../../../../../assets/demo.png";
 import info from "../../../../../assets/information.png";
+
 type Project = {
     image: string;
     name: string;
@@ -25,7 +26,9 @@ const ProjectCardWrapper = styled.div`
 `;
 
 const ProjectCard = styled.div`
-    width: calc(33.333% - var(--space-20));
+    display: flex;
+    gap: 15rem;
+    width: 100%;
     border-radius: var(--border-radius-40);
     box-shadow: var(--shadow-3xl);
     padding: var(--space-30) var(--space-30);
@@ -33,7 +36,9 @@ const ProjectCard = styled.div`
 
     transition: opacity 0.3s;
     &:hover {
-        opacity: 0.5;
+        .project-image-overlay {
+            opacity: 1;
+        }
     }
 `;
 
@@ -46,33 +51,47 @@ const ProjectDescription = styled(Typography)``;
 const ButtonWrapper = styled.div<{ isVisible: boolean }>`
     display: ${({ isVisible }) => (isVisible ? "flex" : "none")};
     position: absolute;
-    bottom: var(--space-72);
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 9rem;
+    right: 12rem;
     padding: var(--space-20);
-
     border-radius: var(--border-radius-20);
     z-index: 2;
     gap: var(--space-10);
 `;
 
-const ProjectImg = styled.div`
-    text-align: center;
+const ProjectImgWrapper = styled.div`
+    position: relative;
+    overflow: hidden;
+    width: 50%;
+    height: auto;
+    border-radius: var(--border-radius-36);
 `;
 
 const ProjectImage = styled.img`
-    max-width: 100%;
+    width: 100%;
     border-radius: var(--border-radius-36);
 `;
+
+const ProjectImageOverlay = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+`;
+
 const Buttons = styled(Button)`
-    background-color: none;
-    z-index: 2;
+    align-items: center;
+    justify-content: center;
     img {
         width: 3rem;
-        z-index: 1;
         height: auto;
     }
 `;
+
 const ProjectCards = ({ project }: ProjectCardProps) => {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
 
@@ -82,15 +101,14 @@ const ProjectCards = ({ project }: ProjectCardProps) => {
                 onMouseEnter={() => setIsButtonVisible(true)}
                 onMouseLeave={() => setIsButtonVisible(false)}
             >
-                <ProjectName variant="paragraphMD" weight="semibold">
-                    {project.name}
-                </ProjectName>
-                <ProjectDescription variant="subtitleLG">
-                    {project.description}
-                </ProjectDescription>
-                <ProjectImg>
-                    <ProjectImage src={project.image} alt="Project" />
-                </ProjectImg>
+                <div className="hover-effect">
+                    <ProjectName variant="paragraphMD" weight="semibold">
+                        {project.name}
+                    </ProjectName>
+                    <ProjectDescription variant="subtitleLG">
+                        {project.description}
+                    </ProjectDescription>
+                </div>
                 <ButtonWrapper isVisible={isButtonVisible}>
                     <a href={project.githubLink}>
                         <Buttons>
@@ -108,6 +126,10 @@ const ProjectCards = ({ project }: ProjectCardProps) => {
                         </Buttons>
                     </a>
                 </ButtonWrapper>
+                <ProjectImgWrapper>
+                    <ProjectImage src={project.image} alt="Project" />
+                    <ProjectImageOverlay className="project-image-overlay" />
+                </ProjectImgWrapper>
             </ProjectCard>
         </ProjectCardWrapper>
     );
