@@ -38,7 +38,7 @@ const ImageWrapper = styled.div`
     img {
         object-fit: contain;
         border-radius: var(--space-40) 0 var(--space-40);
-        height: 45rem;
+        height: 35rem;
         width: auto;
     }
 `;
@@ -48,7 +48,7 @@ const AboutTextWrapper = styled.div`
 `;
 
 const Title = styled(Typography)`
-    margin-bottom: var(--space-50);
+    margin-bottom: var(--space-30);
     z-index: 10;
     span {
         color: var(--primary-300);
@@ -61,12 +61,9 @@ const Bio = styled(Typography)`
 `;
 
 const Buttons = styled(Button)`
+    padding: 0 var(--space-12);
     display: flex;
     margin: 0 auto;
-    &:hover {
-        background-color: var(--primary-100);
-        color: white;
-    }
 `;
 const Info = styled(Typography)`
     display: flex;
@@ -95,7 +92,7 @@ const About = () => {
                 </motion.div>
 
                 <AboutTextWrapper>
-                    <Title variant="h3">
+                    <Title variant="h4">
                         About <span>Me</span>
                     </Title>
                     <motion.div
@@ -105,17 +102,17 @@ const About = () => {
                         whileInView={{ opacity: 2, scale: 1 }}
                     >
                         <TextWrapper>
-                            <Bio variant="paragraphMD">{info.bio}</Bio>
-                            <Info variant="paragraphSM">
+                            <Bio variant="subtitleMD">{info.bio}</Bio>
+                            <Info variant="subtitleMD">
                                 <span>Name:</span> {info.fullName}
                             </Info>
-                            <Info variant="paragraphSM">
+                            <Info variant="subtitleMD">
                                 <span>Age:</span> {info.age}
                             </Info>
-                            <Info variant="paragraphSM">
+                            <Info variant="subtitleMD">
                                 <span>Email:</span> {info.email}
                             </Info>
-                            <Info variant="paragraphSM">
+                            <Info variant="subtitleMD">
                                 <span>Phone:</span> {info.phone}
                             </Info>
                         </TextWrapper>
