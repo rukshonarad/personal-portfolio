@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { About } from "./sections/about/About";
 import { Projects } from "./sections/project/Projects";
 import { HireMe } from "./sections/hire-me/HireMe";
+import { Experiance } from "./sections/experinace/Experiance";
 
 const Base = styled.div`
     max-width: 192rem;
@@ -15,6 +16,7 @@ const HomePage = () => {
         <Base>
             <Service></Service>
             <About></About>
+            <Experiance></Experiance>
             <Projects></Projects>
             <HireMe></HireMe>
         </Base>
