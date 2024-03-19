@@ -8,17 +8,12 @@ import me from "../../../../assets/me.png";
 import { motion } from "framer-motion";
 
 const info = {
-    bio: "Hello, I'm Rukshona, a full-stack developer based in New York with over a year of experience. Passionate about crafting seamless digital experiences, I thrive on bringing innovative ideas to life through code. From backend logic to captivating frontend interfaces, I specialize in creating dynamic web solutions that engage and inspire users.",
-    fullName: "Rukhshona Radjabova",
-    age: "27",
-    address: "New York, USA",
-    email: "rukshona.rad@gmail.com",
-    phone: "(929) 378-5352"
+    bio: "Hello, I'm Rukshona, a full-stack developer based in New York with over a year of experience. Passionate about crafting seamless digital experiences, I thrive on bringing innovative ideas to life through code. From backend logic to captivating frontend interfaces, I specialize in creating dynamic web solutions that engage and inspire users."
 };
 
 const BaseContainer = styled(Container)`
     position: relative;
-    padding-top: var(--space-250);
+    padding-top: var(--space-230);
     background-color: var(--primary-25);
 `;
 
@@ -48,7 +43,7 @@ const AboutTextWrapper = styled.div`
 `;
 
 const Title = styled(Typography)`
-    margin-bottom: var(--space-30);
+    margin-bottom: var(--space-72);
     z-index: 10;
     span {
         color: var(--primary-300);
@@ -56,7 +51,7 @@ const Title = styled(Typography)`
 `;
 
 const Bio = styled(Typography)`
-    margin-bottom: var(--space-30);
+    margin-bottom: var(--space-72);
     line-height: 1.5;
 `;
 
@@ -65,14 +60,7 @@ const Buttons = styled(Button)`
     display: flex;
     margin: 0 auto;
 `;
-const Info = styled(Typography)`
-    display: flex;
 
-    span {
-        font-weight: bold;
-        margin-right: var(--space-8);
-    }
-`;
 const TextWrapper = styled.div`
     margin-bottom: var(--space-16);
 `;
@@ -103,18 +91,6 @@ const About = () => {
                     >
                         <TextWrapper>
                             <Bio variant="subtitleMD">{info.bio}</Bio>
-                            <Info variant="subtitleMD">
-                                <span>Name:</span> {info.fullName}
-                            </Info>
-                            <Info variant="subtitleMD">
-                                <span>Age:</span> {info.age}
-                            </Info>
-                            <Info variant="subtitleMD">
-                                <span>Email:</span> {info.email}
-                            </Info>
-                            <Info variant="subtitleMD">
-                                <span>Phone:</span> {info.phone}
-                            </Info>
                         </TextWrapper>
                     </motion.div>
 
