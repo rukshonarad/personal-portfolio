@@ -44,6 +44,7 @@ const ProjectCard = styled.div`
 
 const ProjectName = styled(Typography)`
     margin: 0 auto;
+    margin-bottom: var(--space-32);
 `;
 
 const ProjectDescription = styled(Typography)``;
@@ -52,7 +53,7 @@ const ButtonWrapper = styled.div<{ isVisible: boolean }>`
     display: ${({ isVisible }) => (isVisible ? "flex" : "none")};
     position: absolute;
     bottom: 9rem;
-    right: 12rem;
+    right: 9rem;
     padding: var(--space-20);
     border-radius: var(--border-radius-20);
     z-index: 2;
@@ -102,10 +103,10 @@ const ProjectCards = ({ project }: ProjectCardProps) => {
                 onMouseLeave={() => setIsButtonVisible(false)}
             >
                 <div className="hover-effect">
-                    <ProjectName variant="paragraphMD" weight="semibold">
+                    <ProjectName variant="paragraphLG" weight="semibold">
                         {project.name}
                     </ProjectName>
-                    <ProjectDescription variant="subtitleLG">
+                    <ProjectDescription variant="paragraphSM">
                         {project.description}
                     </ProjectDescription>
                 </div>
