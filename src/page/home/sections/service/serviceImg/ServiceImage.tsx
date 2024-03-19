@@ -39,13 +39,7 @@ const ToolBox = styled.div`
 const SkillTitle = styled.span`
     font-size: var(--font-size-18);
     font-weight: var(--font-weight-700);
-    color: var(--gray-500);
-`;
-
-const ToolbarTitle = styled(Typography)`
-    color: var(--jaguar-700);
-    display: flex;
-    justify-content: center;
+    color: var(--gray-100);
 `;
 
 const ToolBar: React.FC<{ tools: Tool[] }> = ({ tools }) => {
