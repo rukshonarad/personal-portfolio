@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { About } from "./sections/about/About";
 import { Projects } from "./sections/project/Projects";
 import { HireMe } from "./sections/hire-me/HireMe";
-import { Experiance } from "./sections/experinace/Experiance";
+import { Experiance } from "./sections/experiances/Experiance";
 
 const Base = styled.div`
     max-width: 192rem;
