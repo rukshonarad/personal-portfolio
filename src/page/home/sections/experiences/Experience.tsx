@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import { Typography } from "../../../../design-system";
 import { Container } from "../../../components";
-import { experiances } from "./experiance/data";
-import { ExperianceCard } from "./experiance/ExperianceCard";
+import { experiences } from "./experience/data";
+import { ExperienceCard } from "./experience/ExperienceCard";
 import motion from "framer-motion";
 const SectionBase = styled(Container)`
     padding-top: 20rem;
     padding-bottom: 15rem;
 `;
 
-const ExperianceTextWrapper = styled.div`
+const ExperienceTextWrapper = styled.div`
     text-align: center;
     margin-bottom: var(--space-50);
 `;
@@ -23,29 +23,29 @@ const Title = styled(Typography)`
     }
 `;
 
-const ExperianceCardsWrapper = styled.div`
+const ExperienceCardsWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-40);
     margin-bottom: var(--space-50);
 `;
 
-const Experiance = () => {
+const Experience = () => {
     return (
         <SectionBase>
-            <ExperianceTextWrapper>
+            <ExperienceTextWrapper>
                 <Title variant="h4">
                     What <span>Services</span> Do I Provide?
                 </Title>
-            </ExperianceTextWrapper>
+            </ExperienceTextWrapper>
 
-            <ExperianceCardsWrapper>
-                {experiances.map((experiance, index) => (
-                    <ExperianceCard key={index} experiance={experiance} />
+            <ExperienceCardsWrapper>
+                {experiences.map((experience, index) => (
+                    <ExperienceCard key={index} experience={experience} />
                 ))}
-            </ExperianceCardsWrapper>
+            </ExperienceCardsWrapper>
         </SectionBase>
     );
 };
 
-export { Experiance };
+export { Experience };

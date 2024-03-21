@@ -1,6 +1,6 @@
-import { Experiance } from "./ExperianceCard";
+import { Experience } from "./ExperienceCard";
 
-export const experiances: Experiance[] = [
+export const experiences: Experience[] = [
     {
         icon: "frontend",
         title: "Front-end Development",

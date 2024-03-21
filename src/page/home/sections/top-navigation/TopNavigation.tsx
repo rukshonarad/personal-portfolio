@@ -3,10 +3,11 @@ import logo from "../../../../assets/logo.png";
 import { Button } from "../../../../design-system";
 import { Typography } from "../../../../design-system/Typography";
 const links = [
-    { text: "Home", link: "https://google.com" },
-    { text: "About", link: "https://facebook.com" },
-    { text: "Projects", link: "" },
-    { text: "Hire Me", link: "https://facebook.com" }
+    { text: "Home", link: "#" },
+    { text: "About", link: "#about" },
+    { text: "Projects", link: "#projects" },
+    { text: "Experience", link: "#experience" },
+    { text: "Hire Me", link: "#hireMe" }
 ];
 const StyledLink = styled.nav`
     color: var(--jaguar-700);
@@ -16,7 +17,7 @@ const StyledLink = styled.nav`
         color: var(--jaguar-900);
         font-weight: var(--font-weight-800);
         margin-right: 4rem;
-        font-size: var(--font-size-20);
+        font-size: var(--font-size-18);
         &:hover {
             transform: scale(1.1);
         }
