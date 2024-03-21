@@ -15,6 +15,7 @@ type ExperianceCardProps = {
 export const ExperiancesCardBase = styled.div<{ icon: IconName }>`
     position: relative;
     cursor: pointer;
+    padding: var(--space-10);
     border-radius: var(--border-radius-40);
     max-width: 37rem;
     box-shadow: var(--shadow-2xl);
@@ -32,7 +33,7 @@ const ExperianceTextWrapper = styled.div<{ icon: string }>`
 `;
 
 const ExperianceTitle = styled(Typography)`
-    color: var(--jaguar-900);
+    color: var(--jaguar-700);
     margin-bottom: var(--space-12);
 `;
 
@@ -41,23 +42,23 @@ const ExperianceDescription = styled(Typography)`
 `;
 
 const IconWrapper = styled.div<{ icon: IconName }>`
-    padding: var(--space-16);
+    margin: 0 auto;
     display: flex;
     align-items: center;
     border-radius: 50%;
-    height: 8rem;
-    width: 8rem;
+    height: 6rem;
+    width: 6rem;
 `;
 
 const ExperianceCard: React.FC<ExperianceCardProps> = ({ experiance }) => {
     return (
         <ExperiancesCardBase icon={experiance.icon}>
             <IconWrapper icon={experiance.icon}>
-                <Icon iconName={experiance.icon} height="6rem" width="6rem" />
+                <Icon iconName={experiance.icon} height="5rem" width="5rem" />
             </IconWrapper>
 
             <ExperianceTextWrapper icon={experiance.icon}>
-                <ExperianceTitle variant="paragraphLG" weight="bold">
+                <ExperianceTitle variant="paragraphSM" weight="bold">
                     {experiance.title}
                 </ExperianceTitle>
                 <ExperianceDescription variant="subtitleMD" weight="normal">

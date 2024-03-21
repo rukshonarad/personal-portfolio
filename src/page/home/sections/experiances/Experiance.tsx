@@ -3,9 +3,9 @@ import { Typography } from "../../../../design-system";
 import { Container } from "../../../components";
 import { experiances } from "./experiance/data";
 import { ExperianceCard } from "./experiance/ExperianceCard";
-
+import motion from "framer-motion";
 const SectionBase = styled(Container)`
-    padding-top: 25rem;
+    padding-top: 20rem;
     padding-bottom: 15rem;
 `;
 
@@ -38,6 +38,7 @@ const Experiance = () => {
                     What <span>Services</span> Do I Provide?
                 </Title>
             </ExperianceTextWrapper>
+
             <ExperianceCardsWrapper>
                 {experiances.map((experiance, index) => (
                     <ExperianceCard key={index} experiance={experiance} />
