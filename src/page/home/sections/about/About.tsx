@@ -56,7 +56,7 @@ const Bio = styled(Typography)`
 `;
 
 const Buttons = styled(Button)`
-    padding: 0 var(--space-12);
+    padding: 0 var(--space-40);
     display: flex;
     margin: 0 auto;
 `;
@@ -71,8 +71,8 @@ const About = () => {
                 <motion.div
                     initial={{ opacity: 1, scale: 0.5 }}
                     transition={{ duration: 3 }}
-                    animate={{ opacity: 1, x: 5 }}
-                    whileInView={{ opacity: 2, scale: 1 }}
+                    animate={{ x: 5 }}
+                    whileInView={{ opacity: 1.5, scale: 1 }}
                 >
                     <ImageWrapper>
                         <img src={me} alt="" />
@@ -83,16 +83,10 @@ const About = () => {
                     <Title variant="h4">
                         About <span>Me</span>
                     </Title>
-                    <motion.div
-                        initial={{ opacity: 1, scale: 0.5 }}
-                        transition={{ duration: 3 }}
-                        animate={{ opacity: 1, x: 5 }}
-                        whileInView={{ opacity: 2, scale: 1 }}
-                    >
-                        <TextWrapper>
-                            <Bio variant="subtitleMD">{info.bio}</Bio>
-                        </TextWrapper>
-                    </motion.div>
+
+                    <TextWrapper>
+                        <Bio variant="subtitleMD">{info.bio}</Bio>
+                    </TextWrapper>
 
                     <Buttons>Contact Me</Buttons>
                 </AboutTextWrapper>
