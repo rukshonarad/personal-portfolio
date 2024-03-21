@@ -1,8 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button, Input, Typography } from "../../../../design-system";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Container } from "../../../components";
+import emailjs from "emailjs-com";
 
 const Form = styled.form`
     display: grid;
@@ -45,12 +46,12 @@ const Buttons = styled(Button)`
 `;
 
 const HireMe = () => {
-    const [fullName, setFullName] = useState<string>("");
-    const [phoneNumber, setPhoneNumber] = useState<string>("");
-    const [email, setEmail] = useState<string>("");
-    const [textArea, setTextArea] = useState<string>("");
+    const [fullName, setFullName] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [email, setEmail] = useState("");
+    const [textArea, setTextArea] = useState("");
 
-    const [isFormSubmitting, setIsFormSubmitting] = useState<boolean>(false);
+    const [isFormSubmitting, setIsFormSubmitting] = useState(false);
 
     const handleOnChangePhoneNumber = (value: string) => {
         setPhoneNumber(value);
@@ -75,15 +76,21 @@ const HireMe = () => {
 
         try {
             setIsFormSubmitting(true);
+            await emailjs.sendForm(
+                "YOUR_SERVICE_ID",
+                "YOUR_TEMPLATE_ID",
+                e.currentTarget as HTMLFormElement,
+                "YOUR_USER_ID"
+            );
+            console.log("Email sent successfully!");
             setIsFormSubmitting(false);
             setPhoneNumber("");
             setFullName("");
             setEmail("");
             setTextArea("");
         } catch (error) {
-            if (error instanceof Error) {
-                setIsFormSubmitting(false);
-            }
+            console.error("Error sending email:", error);
+            setIsFormSubmitting(false);
         }
     };
 
@@ -121,7 +128,9 @@ const HireMe = () => {
                                 type="text"
                                 placeholder="Full Name"
                                 value={fullName}
-                                onChange={handleOnChangeFullName}
+                                onChange={(e) =>
+                                    handleOnChangeFullName(e.target.value)
+                                }
                                 shape="rounded"
                                 size="lg"
                                 className="full__name"
@@ -131,7 +140,9 @@ const HireMe = () => {
                                 type="tel"
                                 placeholder="(123)456-7890"
                                 value={phoneNumber}
-                                onChange={handleOnChangePhoneNumber}
+                                onChange={(e) =>
+                                    handleOnChangePhoneNumber(e.target.value)
+                                }
                                 shape="rounded"
                                 size="lg"
                                 className="phone__number"
@@ -142,7 +153,9 @@ const HireMe = () => {
                                 type="email"
                                 placeholder="a@example.com"
                                 value={email}
-                                onChange={handleOnChangeEmail}
+                                onChange={(e) =>
+                                    handleOnChangeEmail(e.target.value)
+                                }
                                 shape="rounded"
                                 size="lg"
                                 className="email"
@@ -152,7 +165,9 @@ const HireMe = () => {
                                 type="textarea"
                                 placeholder="Message"
                                 value={textArea}
-                                onChange={handleOnChangeTextArea}
+                                onChange={(e) =>
+                                    handleOnChangeTextArea(e.target.value)
+                                }
                                 shape="rounded"
                                 size="lg"
                                 className="textarea"
@@ -161,9 +176,13 @@ const HireMe = () => {
 
                             <Buttons
                                 className="button"
-                                // disabled={isFormSubmitting || !isFormSubmittable}
+                                disabled={
+                                    isFormSubmitting || !isFormSubmittable
+                                }
                             >
-                                Send Message
+                                {isFormSubmitting
+                                    ? "Sending..."
+                                    : "Send Message"}
                             </Buttons>
                         </Form>
                     </motion.div>
