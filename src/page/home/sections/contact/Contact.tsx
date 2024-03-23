@@ -1,48 +1,35 @@
 import styled from "styled-components";
 import { Button, Input, Typography } from "../../../../design-system";
 import { Container } from "../../../components";
-import IconLink from "../../../components/IconLink";
+import IconLink from "../../../components/IconLinks";
 import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 
 const BaseContainer = styled(Container)`
-    padding-top: var(--space-100);
-    padding-bottom: var(--space-40);
+    padding-top: 20rem;
 `;
 
 const Content = styled.div`
     display: flex;
     justify-content: space-between;
-    gap: var(--space-50);
-
-    @media (max-width: 57em) {
-        //912
-        display: block;
-    }
+    gap: var(--space-60);
 `;
 
 const Title = styled(Typography)`
-    color: var(--color-white);
-    text-align: center;
-    margin-bottom: var(--space-64);
+    color: var(--jaguard-100);
+    text-align: left;
+    margin-bottom: var(--space-28);
 `;
 
 const ContactInfoWrapper = styled.div`
     width: 40%;
     padding: var(--space-32);
 
-    background-color: #fafafa;
     border-radius: var(--border-radius-8);
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    @media (max-width: 57em) {
-        //912
-        width: 100%;
-        margin-bottom: var(--space-32);
-    }
 `;
 
 const TextWrapper = styled.div`
@@ -54,8 +41,9 @@ const TextWrapper = styled.div`
 `;
 
 const StyledLink = styled.a`
-    font-size: 1.8rem;
-    color: #3aa79a;
+    font-size: var(--font-size-12);
+    line-height: var(--line-height-18);
+    color: var(--jaguard-100);
 `;
 
 const SocialMedia = styled.div`
@@ -73,7 +61,7 @@ const ContactForm = styled.form`
     border-radius: var(--border-radius-8);
 
     > *:not(:last-child) {
-        margin-bottom: var(--space-24);
+        margin-bottom: var(--space-20);
     }
 
     @media (max-width: 57em) {
@@ -139,14 +127,14 @@ const Contact = () => {
             });
 
             try {
-                await emailjs.sendForm(
-                    "service_67toclm",
-                    "template_6vyt8o9",
-                    form.current,
-                    {
-                        publicKey: "WM3lpTR-yY047TINO"
-                    }
-                );
+                // await emailjs.sendForm(
+                //     "service_67toclm",
+                //     "template_6vyt8o9",
+                //     form.current,
+                //     {
+                //         publicKey: "WM3lpTR-yY047TINO"
+                //     }
+                // );
                 setIsFormSubmitting(false);
                 setName("");
                 setEmail("");
@@ -164,8 +152,6 @@ const Contact = () => {
 
     const githubLink = process.env.REACT_APP_GITHUB_LINK || "";
     const linkedinLink = process.env.REACT_APP_LINKEDIN_LINK || "";
-    const twitterLink = process.env.REACT_APP_TWITTER_LINK || "";
-    const facebookLink = process.env.REACT_APP_FACEBOOK_LINK || "";
 
     return (
         <BaseContainer>
@@ -175,33 +161,31 @@ const Contact = () => {
             <Content>
                 <ContactInfoWrapper>
                     <TextWrapper>
-                        <Typography variant="h5" weight="bold">
+                        <Typography variant="h6" weight="bold">
                             Say Hello!
                         </Typography>
-                        <Typography variant="paragraphMD" weight="normal">
+                        <Typography variant="subtitleMD" weight="normal">
                             Have a project in mind or just have a question?
                             Let's connect and make it happen together!
                         </Typography>
-                        <Typography variant="paragraphMD" weight="bold">
+                        <Typography variant="paragraphSM" weight="bold">
                             Email
                         </Typography>
-                        <StyledLink href="mailto:durdona.dev@gmail.com">
-                            durdona.dev@gmail.com
+                        <StyledLink href="mailto:rukshona.rad@gmail.com">
+                            rukshona.rad@gmail.com
                         </StyledLink>
 
                         <Typography variant="paragraphMD" weight="bold">
                             Phone
                         </Typography>
-                        <StyledLink href="tel:+19293347203">
-                            +1 929 334-7203
+                        <StyledLink href="tel:+9293785352">
+                            +1 929 378-5352
                         </StyledLink>
                     </TextWrapper>
 
                     <SocialMedia>
                         <IconLink href={linkedinLink} iconName="linkdin-icon" />
                         <IconLink href={githubLink} iconName="github-icon" />
-                        <IconLink href={twitterLink} iconName="twitter-icon" />
-                        <IconLink href={facebookLink} iconName="facebook" />
                     </SocialMedia>
                 </ContactInfoWrapper>
                 <ContactForm ref={form} onSubmit={sendEmail}>
@@ -216,7 +200,6 @@ const Contact = () => {
                     </form> */}
                     <Input
                         name="user_name"
-                        labelText="Name"
                         type="text"
                         placeholder="Will Smith"
                         shape="rounded"
@@ -227,7 +210,6 @@ const Contact = () => {
 
                     <Input
                         name="user_email"
-                        labelText="Email"
                         type="email"
                         placeholder="email@example.com"
                         shape="rounded"
@@ -237,7 +219,6 @@ const Contact = () => {
                     />
                     <Input
                         name="user_tel"
-                        labelText="Phone Number"
                         type="tel"
                         placeholder="(123) 456-7890"
                         shape="rounded"
@@ -247,7 +228,6 @@ const Contact = () => {
                     />
                     <Input
                         name="message"
-                        labelText="Message"
                         type="textarea"
                         placeholder="How can I help you?"
                         shape="rounded"
@@ -255,13 +235,7 @@ const Contact = () => {
                         value={message}
                         onChange={handleOnChangeMessage}
                     />
-                    <StyledButton
-                        // color="primary"
-                        size="lg"
-                        shape="rounded"
-                        fullWidth
-                        // disabled={isFormSubmitting || !isFormSubmittable}
-                    >
+                    <StyledButton size="lg" shape="rounded" fullWidth>
                         Send Message
                     </StyledButton>
                 </ContactForm>

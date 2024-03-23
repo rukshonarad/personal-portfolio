@@ -2,7 +2,7 @@ import { Service } from "./sections/service/ServiceWrapper";
 import styled from "styled-components";
 import { About } from "./sections/about/About";
 import { Projects } from "./sections/project/Projects";
-import { HireMe } from "./sections/hire-me/HireMe";
+import { Contact } from "./sections/contact/Contact";
 import { Experience } from "./sections/experiences/Experience";
 
 const Base = styled.div`
@@ -18,7 +18,7 @@ const HomePage = () => {
             <About></About>
             <Experience></Experience>
             <Projects></Projects>
-            <HireMe></HireMe>
+            <Contact></Contact>
         </Base>
     );
 };
