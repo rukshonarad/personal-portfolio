@@ -4,7 +4,6 @@ import { Tool } from "./types";
 import { Icon } from "../../../../../design-system/icon";
 import { Container } from "../../../../components";
 import { tools } from "./data";
-import { Typography } from "../../../../../design-system/Typography";
 
 const ToolBarWrapper = styled(Container)`
     width: 100%;
@@ -38,7 +37,7 @@ const ToolBox = styled.div`
 
 const SkillTitle = styled.span`
     font-size: var(--font-size-18);
-    font-weight: var(--font-weight-700);
+    font-weight: var(--font-weight-600);
     color: var(--gray-100);
 `;
 

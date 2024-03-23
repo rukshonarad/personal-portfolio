@@ -26,7 +26,7 @@ const Title = styled(Typography)`
 const Description = styled(Typography)`
     color: var(--jaguar-800);
     margin: 0 auto;
-    width: 50%;
+    width: 70%;
 `;
 
 const StyledText = styled.div`
@@ -34,7 +34,7 @@ const StyledText = styled.div`
 `;
 
 const StyledTextSecond = styled.div`
-    color: var(--jaguar-800);
+    color: var(--jaguar-700);
 `;
 
 const Services = () => {
@@ -55,10 +55,10 @@ const Services = () => {
                     </Title>
                 </motion.div>
                 <Description variant="subtitleMD" weight="medium">
-                    I am experienced in using databases, version control
-                    systems, and deployment technologies to ensure seamless
-                    integration and functionality across the entire software
-                    stack
+                    I'm a seasoned software engineer with expertise in
+                    full-stack development, specializing in crafting robust
+                    solutions for complex problems with proficiency in various
+                    programming languages and technologies
                 </Description>
             </FeaturesTextWrapper>
         </SectionBase>
