@@ -27,13 +27,10 @@ const Icon: React.FC<IconProps & { spread?: boolean }> = ({
         onClick && onClick();
     };
 
-    const defaultHeight = "2.4rem";
-    const defaultWidth = "2.4rem";
-
     return (
         <StyledSVG
-            height={height || defaultHeight}
-            width={width || defaultWidth}
+            height={height}
+            width={width}
             className={className || ""}
             onClick={handleOnClick}
             spread={spread}
