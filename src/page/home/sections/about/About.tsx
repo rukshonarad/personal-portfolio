@@ -14,7 +14,7 @@ const info = {
 const BaseContainer = styled(Container)`
     position: relative;
     padding-top: var(--space-230);
-    background-color: var(--primary-25);
+    background-color: white;
 `;
 
 const AboutContent = styled.div`
@@ -56,7 +56,7 @@ const Bio = styled(Typography)`
 `;
 
 const Buttons = styled(Button)`
-    padding: 0 var(--space-40);
+    /* padding: 0 var(--space-40); */
     display: flex;
     margin: 0 auto;
 `;
@@ -88,7 +88,7 @@ const About = () => {
                         <Bio variant="subtitleMD">{info.bio}</Bio>
                     </TextWrapper>
 
-                    <Buttons>Contact Me</Buttons>
+                    <Buttons size="md">Contact Me</Buttons>
                 </AboutTextWrapper>
             </AboutContent>
         </BaseContainer>
