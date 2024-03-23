@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Icon from "../../../components/IconLinks";
-import { Button } from "../../../../design-system";
+import Icon from "../../components/IconLinks";
+import { Button } from "../../../design-system";
 
 const links = [
     { text: "Home", link: "#" },

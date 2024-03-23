@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Typography } from "../../../../design-system";
-import { Container } from "../../../components";
+import { Typography } from "../../../design-system";
+import { Container } from "../../components";
 import { experiences } from "./experience/data";
 import { ExperienceCard } from "./experience/ExperienceCard";
 import motion from "framer-motion";

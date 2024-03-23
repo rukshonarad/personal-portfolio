@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import { Tool } from "./types";
-import { Icon } from "../../../../../design-system/icon";
-import { Container } from "../../../../components";
+import { Icon } from "../../../../design-system/icon";
+import { Container } from "../../../components";
 import { tools } from "./data";
 
 const ToolBarWrapper = styled(Container)`

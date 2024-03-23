@@ -1,9 +1,9 @@
-import { Service } from "./sections/service/ServiceWrapper";
+import { Service } from "./service/ServiceWrapper";
 import styled from "styled-components";
-import { About } from "./sections/about/About";
-import { Projects } from "./sections/project/Projects";
-import { Contact } from "./sections/contact/Contact";
-import { Experience } from "./sections/experiences/Experience";
+import { About } from "./about/About";
+import { Projects } from "./project/Projects";
+import { Contact } from "./contact/Contact";
+import { Experience } from "./experiences/Experience";
 
 const Base = styled.div`
     max-width: 192rem;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Typography } from "../../../../design-system";
+import { Typography } from "../../../design-system";
 import { ProjectCards } from "./ProjectCard.tsx";
 import { projects } from "./ProjectCard.tsx/data";
 

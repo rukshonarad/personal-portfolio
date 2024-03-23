@@ -1,6 +1,6 @@
-import project1 from "../../../../../assets/projectifyy.png";
-import project2 from "../../../../../assets/restaurant.png";
-import project3 from "../../../../../assets/furniture.png";
+import project1 from "../../../../assets/projectifyy.png";
+import project2 from "../../../../assets/restaurant.png";
+import project3 from "../../../../assets/furniture.png";
 
 export const projects = [
     {

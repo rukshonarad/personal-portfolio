@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Button } from "../../../../design-system";
-import { Typography } from "../../../../design-system/Typography";
+import { Button } from "../../../design-system";
+import { Typography } from "../../../design-system/Typography";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 

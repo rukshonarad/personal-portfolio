@@ -1,4 +1,4 @@
-import { IconName } from "../../../../../design-system/icon";
+import { IconName } from "../../../../design-system/icon";
 
 export interface Tool {
     title: string;

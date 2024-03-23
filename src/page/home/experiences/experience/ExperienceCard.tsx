@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Icon, IconName, Typography } from "../../../../../design-system";
+import { Icon, IconName, Typography } from "../../../../design-system";
 import React from "react";
 
 export type Experience = {

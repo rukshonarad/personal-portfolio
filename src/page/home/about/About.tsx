@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Button } from "../../../../design-system";
-import { Container } from "../../../components";
-import { Typography } from "../../../../design-system/Typography";
-import { Icon } from "../../../../design-system/icon";
+import { Button } from "../../../design-system";
+import { Container } from "../../components";
+import { Typography } from "../../../design-system/Typography";
+import { Icon } from "../../../design-system/icon";
 
-import me from "../../../../assets/me.png";
+import me from "../../../assets/me.png";
 import { motion } from "framer-motion";
 
 const info = {

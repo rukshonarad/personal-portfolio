@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { Button, Typography } from "../../../../../design-system";
+import { Button, Typography } from "../../../../design-system";
 import { useState } from "react";
-import github from "../../../../../assets/github.png";
-import demo from "../../../../../assets/demo.png";
-import info from "../../../../../assets/information.png";
+import github from "../../../../assets/github.png";
+import demo from "../../../../assets/demo.png";
+import info from "../../../../assets/information.png";
 
 type Project = {
     image: string;

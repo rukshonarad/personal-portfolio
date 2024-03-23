@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Button, Input, Typography } from "../../../../design-system";
-import { Container } from "../../../components";
-import IconLink from "../../../components/IconLinks";
+import { Button, Input, Typography } from "../../../design-system";
+import { Container } from "../../components";
+import IconLink from "../../components/IconLinks";
 import { useRef, useState } from "react";
 // import emailjs from "@emailjs/browser";
 
