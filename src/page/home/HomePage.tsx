@@ -4,6 +4,8 @@ import { About } from "./about/About";
 import { Projects } from "./project/Projects";
 import { Contact } from "./contact/Contact";
 import { Experience } from "./experiences/Experience";
+import { TopNavigation } from "./top-navigation/TopNavigation";
+import { Footer } from "./footer/Footer";
 
 const Base = styled.div`
     max-width: 192rem;
@@ -19,6 +21,7 @@ const HomePage = () => {
             <Experience></Experience>
             <Projects></Projects>
             <Contact></Contact>
+            <Footer></Footer>
         </Base>
     );
 };

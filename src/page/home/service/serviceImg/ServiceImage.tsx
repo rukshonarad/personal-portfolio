@@ -37,7 +37,7 @@ const ToolBox = styled.div`
 
 const SkillTitle = styled.span`
     font-size: var(--font-size-18);
-    font-weight: var(--font-weight-600);
+    font-weight: var(--font-weight-400);
     color: var(--gray-100);
 `;
 

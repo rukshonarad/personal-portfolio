@@ -2,15 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Icon, IconName } from "../../design-system";
 
-interface StyledLinkProps {
-    size: string;
-}
-
-const StyledLink = styled.a<StyledLinkProps>`
+const StyledLink = styled.a`
     z-index: 10;
     cursor: pointer;
-    height: ${(props) => props.size};
-    width: ${(props) => props.size};
+    height: 2.4rem;
+    width: 2.4rem;
     transition: all 0.7s;
 
     &:hover {
@@ -18,25 +14,15 @@ const StyledLink = styled.a<StyledLinkProps>`
     }
 `;
 
-const Icons = styled(Icon)<StyledLinkProps>`
-    height: ${(props) => props.size};
-    width: ${(props) => props.size};
-`;
-
 interface IconLinkProps {
-    href?: string;
+    href: string;
     iconName: IconName;
-    size?: string; // Optional size prop
 }
 
-const IconLink: React.FC<IconLinkProps> = ({
-    href,
-    iconName,
-    size = "2.4rem"
-}) => {
+const IconLink: React.FC<IconLinkProps> = ({ href, iconName }) => {
     return (
-        <StyledLink href={href} target="_blank" size={size}>
-            <Icons iconName={iconName} size={size} />
+        <StyledLink href={href} target="_blank">
+            <Icon iconName={iconName} height="2.4rem" width="2.4rem" />
         </StyledLink>
     );
 };

@@ -38,8 +38,7 @@ const TextWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: var(--space-10);
-    margin-bottom: var(--space-32);
+    gap: var(--space-8);
 `;
 
 const StyledLink = styled.a`
@@ -50,9 +49,7 @@ const StyledLink = styled.a`
 
 const SocialMedia = styled.div`
     display: flex;
-    gap: var(--space-50);
-    align-items: center;
-    justify-content: center;
+    gap: var(--space-20);
 `;
 
 const ContactForm = styled.form`
@@ -65,20 +62,12 @@ const ContactForm = styled.form`
     > *:not(:last-child) {
         margin-bottom: var(--space-20);
     }
-
-    @media (max-width: 57em) {
-        //912
-        width: 100%;
-    }
 `;
 
 const StyledButton = styled(Button)`
     margin-left: 7rem;
 `;
-const Footer = styled.div`
-    background-color: var(--blue-charcoal-200);
-    height: 10rem;
-`;
+
 const Contact = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -253,12 +242,6 @@ const Contact = () => {
                     </ContactForm>
                 </Content>
             </BaseContainer>
-            <Footer>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                soluta culpa eveniet qui consequatur quos, voluptatum fuga!
-                Atque possimus magnam distinctio provident reprehenderit iusto
-                autem facere, dicta rerum, dignissimos et?
-            </Footer>
         </div>
     );
 };

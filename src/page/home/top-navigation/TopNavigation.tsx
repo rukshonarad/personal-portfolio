@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Icon from "../../components/IconLinks";
-import { Button } from "../../../design-system";
 
+import { Button } from "../../../design-system";
+import logo from "../../../assets/mainLogo.png";
 const links = [
     { text: "Home", link: "#" },
     { text: "About", link: "#about" },
@@ -44,15 +44,18 @@ const HeaderBase = styled.header`
     transition: all 0.5s;
 `;
 
-const LogoMain = styled(Icon)`
-    height: 10rem !important;
-    width: 10rem !important;
-    margin-bottom: 10rem;
+const Logo = styled.div`
+    img {
+        height: 5rem;
+        width: 5rem;
+    }
 `;
 const TopNavigation = () => {
     return (
         <HeaderBase>
-            <LogoMain iconName="logo" size="6rem"></LogoMain>
+            <Logo>
+                <img src={logo} alt="logo" />
+            </Logo>
             <StyledLink>
                 {links.map((link, index) => (
                     <a key={index} href={link.link}>
