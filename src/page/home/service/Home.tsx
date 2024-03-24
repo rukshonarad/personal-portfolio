@@ -7,10 +7,10 @@ const Base = styled.div`
     max-width: 192rem;
     margin: 0 auto;
     height: 100vh;
-    background-color: var(--green-12);
+    background-color: var(--blue-ribbon-25);
 `;
 
-const Service = () => {
+const Home = () => {
     return (
         <Base>
             <TopNavigation />
@@ -20,4 +20,4 @@ const Service = () => {
     );
 };
 
-export { Service };
+export { Home };
