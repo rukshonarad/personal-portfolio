@@ -1,4 +1,4 @@
-import { Service } from "./service/ServiceWrapper";
+import { Home } from "./service/Home";
 import styled from "styled-components";
 import { About } from "./about/About";
 import { Projects } from "./project/Projects";
@@ -16,12 +16,24 @@ const Base = styled.div`
 const HomePage = () => {
     return (
         <Base>
-            <Service></Service>
-            <About></About>
-            <Experience></Experience>
-            <Projects></Projects>
-            <Contact></Contact>
-            <Footer></Footer>
+            <div id="home">
+                <Home></Home>
+            </div>
+            <div id="about">
+                <About></About>
+            </div>
+            <div id="experience">
+                <Experience></Experience>
+            </div>
+            <div id="projects">
+                <Projects></Projects>
+            </div>
+            <div id="contact">
+                <Contact></Contact>
+            </div>
+            <div id="footer">
+                <Footer></Footer>
+            </div>
         </Base>
     );
 };

@@ -2,15 +2,17 @@ import styled from "styled-components";
 import Icon from "../../components/IconLinks";
 import logo from "../../../assets/mainLogo.png";
 const links = [
-    { text: "Home", link: "#" },
+    { text: "Home", link: "#home" },
     { text: "About", link: "#about" },
     { text: "Projects", link: "#projects" },
     { text: "Experience", link: "#experience" },
-    { text: "Hire Me", link: "#hireMe" }
+    { text: "Contact", link: "#contact" }
 ];
+
 const StyledLink = styled.nav`
     align-items: center;
     a {
+        cursor: pointer;
         color: var(--jaguar-700);
         font-weight: var(--font-weight-800);
         margin-right: 4rem;
@@ -35,6 +37,15 @@ const Logo = styled.div`
     }
 `;
 const Footer = () => {
+    const smoothScrollTo = (targetId: string) => {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    };
     return (
         <FooterBase>
             <Logo>
@@ -42,7 +53,10 @@ const Footer = () => {
             </Logo>
             <StyledLink>
                 {links.map((link, index) => (
-                    <a key={index} href={link.link}>
+                    <a
+                        key={index}
+                        onClick={() => smoothScrollTo(link.link.substring(1))}
+                    >
                         {link.text}
                     </a>
                 ))}

@@ -5,6 +5,7 @@ const Container = styled.div`
     max-width: 190rem;
     height: 100vh;
     padding: 2.5rem 20rem;
+    background-color: var(--blue-ribbon-25);
 `;
 
 export { Container };
