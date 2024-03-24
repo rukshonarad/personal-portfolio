@@ -66,7 +66,7 @@ const TopNavigation = () => {
 
             <Button
                 variant="outlined"
-                size="lg"
+                size="md"
                 shape="rounded"
                 onClick={() => {}}
             >
