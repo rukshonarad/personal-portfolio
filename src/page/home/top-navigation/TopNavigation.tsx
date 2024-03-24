@@ -1,19 +1,22 @@
+import React from "react";
 import styled from "styled-components";
-
 import { Button } from "../../../design-system";
 import logo from "../../../assets/mainLogo.png";
+
 const links = [
-    { text: "Home", link: "#" },
+    { text: "Home", link: "#home" },
     { text: "About", link: "#about" },
     { text: "Projects", link: "#projects" },
     { text: "Experience", link: "#experience" },
-    { text: "Hire Me", link: "#hireMe" }
+    { text: "Contact", link: "#contact" }
 ];
+
 const StyledLink = styled.nav`
     color: var(--jaguar-700);
     font-weight: var(--font-weight-500);
     a {
         margin: 0 auto;
+        cursor: pointer;
         color: var(--jaguar-900);
         font-weight: var(--font-weight-800);
         margin-right: 4rem;
@@ -23,6 +26,7 @@ const StyledLink = styled.nav`
         }
     }
 `;
+
 const HeaderBase = styled.header`
     display: flex;
     justify-content: space-between;
@@ -50,7 +54,18 @@ const Logo = styled.div`
         width: 5rem;
     }
 `;
+
 const TopNavigation = () => {
+    const smoothScrollTo = (targetId: string) => {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    };
+
     return (
         <HeaderBase>
             <Logo>
@@ -58,7 +73,10 @@ const TopNavigation = () => {
             </Logo>
             <StyledLink>
                 {links.map((link, index) => (
-                    <a key={index} href={link.link}>
+                    <a
+                        key={index}
+                        onClick={() => smoothScrollTo(link.link.substring(1))}
+                    >
                         {link.text}
                     </a>
                 ))}
