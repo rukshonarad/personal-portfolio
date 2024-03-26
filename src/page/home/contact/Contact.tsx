@@ -1,9 +1,9 @@
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { Button, Input, Typography } from "../../../design-system";
 import { Container } from "../../components";
 import IconLink from "../../components/IconLinks";
-import { useRef, useState } from "react";
-// import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com"; // Import emailjs-com package
 
 const BaseContainer = styled(Container)`
     padding-top: 20rem;
@@ -26,9 +26,7 @@ const Title = styled(Typography)`
 const ContactInfoWrapper = styled.div`
     width: 100%;
     padding: var(--space-32);
-
     border-radius: var(--border-radius-8);
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -56,9 +54,7 @@ const ContactForm = styled.form`
     width: 100%;
     margin: 0 auto;
     padding: var(--space-32) var(--space-120);
-
     border-radius: var(--border-radius-8);
-
     > *:not(:last-child) {
         margin-bottom: var(--space-20);
     }
@@ -74,7 +70,8 @@ const Contact = () => {
     const [tel, setTel] = useState("");
     const [message, setMessage] = useState("");
     const [isFormSubmitting, setIsFormSubmitting] = useState(false);
-    const [isError, setIsError] = useState<boolean>(false);
+    const [isError, setIsError] = useState(false);
+    const form = useRef<HTMLFormElement | null>(null);
 
     const handleOnChangeName = (value: string) => {
         setName(value);
@@ -91,54 +88,37 @@ const Contact = () => {
 
     const isFormSubmittable = name && email && tel && message;
 
-    const form = useRef<HTMLFormElement | null>(null);
-
     const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log(email, name, tel, message);
 
-        if (form.current) {
+        if (form.current && isFormSubmittable) {
             setIsFormSubmitting(true);
 
-            const formData = new FormData(form.current);
-            const data: Record<string, string> = {
-                name,
-                email,
-                tel,
-                message
+            const mailOptions = {
+                serviceID: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                templateID: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                userID: process.env.REACT_APP_EMAILJS_USER_ID,
+                from_name: name,
+                reply_to: email,
+                message: message
             };
 
-            formData.set("user_name", name);
-            formData.set("user_email", email);
-            formData.set("user_tel", tel);
-            formData.set("message", message);
-
-            formData.forEach((value, key) => {
-                if (value instanceof File) {
-                } else {
-                    data[key] = value as string;
-                }
-            });
-
             try {
-                // await emailjs.sendForm(
-                //     "service_67toclm",
-                //     "template_6vyt8o9",
-                //     form.current,
-                //     {
-                //         publicKey: "WM3lpTR-yY047TINO"
-                //     }
-                // );
+                await emailjs.send(
+                    "default_service",
+                    "template_name",
+                    mailOptions
+                );
                 setIsFormSubmitting(false);
                 setName("");
                 setEmail("");
                 setTel("");
                 setMessage("");
-
                 console.log("Email sent successfully!");
             } catch (error) {
                 setIsFormSubmitting(false);
-
+                setIsError(true);
                 console.error("Error sending email:", error);
             }
         }
@@ -190,19 +170,10 @@ const Contact = () => {
                         </SocialMedia>
                     </ContactInfoWrapper>
                     <ContactForm ref={form} onSubmit={sendEmail}>
-                        {/* <form ref={form} onSubmit={sendEmail}>
-                    <label>Name</label>
-                    <input type="text" name="user_name" />
-                    <label>Email</label>
-                    <input type="email" name="user_email" />
-                    <label>Message</label>
-                    <textarea name="message" />
-                    <input type="submit" value="Send" />
-                    </form> */}
                         <Input
                             name="user_name"
                             type="text"
-                            placeholder="Will Smith"
+                            placeholder="Your Name"
                             shape="circle"
                             size="md"
                             value={name}
@@ -212,7 +183,7 @@ const Contact = () => {
                         <Input
                             name="user_email"
                             type="email"
-                            placeholder="email@example.com"
+                            placeholder="Your Email"
                             shape="circle"
                             size="md"
                             value={email}
@@ -221,7 +192,7 @@ const Contact = () => {
                         <Input
                             name="user_tel"
                             type="tel"
-                            placeholder="(123) 456-7890"
+                            placeholder="Your Phone"
                             shape="circle"
                             size="md"
                             value={tel}
@@ -237,7 +208,7 @@ const Contact = () => {
                             onChange={handleOnChangeMessage}
                         />
                         <StyledButton size="md" shape="rounded" fullWidth>
-                            Send Message
+                            {isFormSubmitting ? "Sending..." : "Send Message"}
                         </StyledButton>
                     </ContactForm>
                 </Content>
@@ -247,3 +218,4 @@ const Contact = () => {
 };
 
 export { Contact };
+export {};

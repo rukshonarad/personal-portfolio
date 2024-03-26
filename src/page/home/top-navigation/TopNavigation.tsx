@@ -1,8 +1,7 @@
-import React from "react";
 import styled from "styled-components";
-import { Button } from "../../../design-system";
+
 import logo from "../../../assets/mainLogo.png";
-import fileSaver from "file-saver";
+
 import FileViewer from "./viewFile";
 
 const links = [
