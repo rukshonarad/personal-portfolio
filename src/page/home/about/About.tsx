@@ -65,14 +65,20 @@ const TextWrapper = styled.div`
     margin-bottom: var(--space-16);
 `;
 const About = () => {
+    const scrollToContact = () => {
+        const contactSection = document.getElementById("contact"); //
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: "smooth" });
+        }
+    };
     return (
         <BaseContainer>
             <AboutContent>
                 <motion.div
                     initial={{ opacity: 1, scale: 0.5 }}
-                    transition={{ duration: 3 }}
-                    animate={{ x: 5 }}
-                    whileInView={{ opacity: 1.5, scale: 1 }}
+                    transition={{ duration: 2 }}
+                    animate={{ opacity: 1, x: 3, y: 1 }}
+                    whileInView={{ opacity: 2, scale: 1 }}
                 >
                     <ImageWrapper>
                         <img src={me} alt="" />
@@ -88,7 +94,9 @@ const About = () => {
                         <Bio variant="subtitleMD">{info.bio}</Bio>
                     </TextWrapper>
 
-                    <Buttons size="md">Contact Me</Buttons>
+                    <Buttons size="md" onClick={scrollToContact}>
+                        Contact Me
+                    </Buttons>
                 </AboutTextWrapper>
             </AboutContent>
         </BaseContainer>
