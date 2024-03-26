@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "../../../design-system";
 import logo from "../../../assets/mainLogo.png";
+import fileSaver from "file-saver";
+import FileViewer from "./viewFile";
 
 const links = [
     { text: "Home", link: "#home" },
@@ -82,14 +84,7 @@ const TopNavigation = () => {
                 ))}
             </StyledLink>
 
-            <Button
-                variant="outlined"
-                size="md"
-                shape="rounded"
-                onClick={() => {}}
-            >
-                Download CV
-            </Button>
+            <FileViewer></FileViewer>
         </HeaderBase>
     );
 };
