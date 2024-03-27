@@ -7,8 +7,8 @@ import FileViewer from "./viewFile";
 const links = [
     { text: "Home", link: "#home" },
     { text: "About", link: "#about" },
-    { text: "Projects", link: "#projects" },
     { text: "Experience", link: "#experience" },
+    { text: "Projects", link: "#projects" },
     { text: "Contact", link: "#contact" }
 ];
 
@@ -33,7 +33,7 @@ const HeaderBase = styled.header`
     justify-content: space-between;
     align-items: center;
     border: 0.5px solid black;
-    width: 76%;
+    width: 80%;
     position: fixed;
     top: 20px;
     left: 50%;
@@ -47,12 +47,24 @@ const HeaderBase = styled.header`
     background-color: var(--white);
     box-shadow: var(--shadow-3xl);
     transition: all 0.5s;
+    @media (max-width: 70em) {
+        //1440
+        width: 80%;
+        top: 20px;
+        left: 50%;
+        padding: var(--space-10);
+    }
 `;
 
 const Logo = styled.div`
     img {
         height: 5rem;
         width: 5rem;
+        @media (max-width: 70em) {
+            height: 3rem;
+            width: 3rem;
+            margin-left: 3rem;
+        }
     }
 `;
 
@@ -83,7 +95,7 @@ const TopNavigation = () => {
                 ))}
             </StyledLink>
 
-            <FileViewer></FileViewer>
+            <FileViewer />
         </HeaderBase>
     );
 };

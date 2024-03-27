@@ -17,6 +17,9 @@ const FeaturesTextWrapper = styled.div`
     text-align: center;
     margin: 0 auto;
     max-width: 70%;
+    @media (max-width: 80em) {
+        gap: var(--space-20);
+    }
 `;
 
 const Title = styled(Typography)`
@@ -27,6 +30,9 @@ const Description = styled(Typography)`
     color: var(--jaguar-800);
     margin: 0 auto;
     width: 70%;
+    @media (max-width: 80em) {
+        width: 50%;
+    }
 `;
 
 const StyledText = styled.div`

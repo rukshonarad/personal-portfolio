@@ -26,10 +26,16 @@ export const ExperiencesCardBase = styled.div<{ icon: IconName }>`
     &:hover {
         transform: scale(1.05);
     }
+    @media (max-width: 70em) {
+        padding: var(--space-10);
+    }
 `;
 
 const ExperienceTextWrapper = styled.div<{ icon: string }>`
     padding: var(--space-8) var(--space-24);
+    @media (max-width: 70em) {
+        padding: var(--space-4) var(--space-18);
+    }
 `;
 
 const ExperienceTitle = styled(Typography)`
