@@ -2,8 +2,7 @@ import styled from "styled-components";
 import { Button } from "../../../design-system";
 import { Container } from "../../components";
 import { Typography } from "../../../design-system/Typography";
-import { Icon } from "../../../design-system/icon";
-
+import grayBackground from "../../../assets/lightGray.jpg";
 import me from "../../../assets/me.png";
 import { motion } from "framer-motion";
 
@@ -14,7 +13,6 @@ const info = {
 const BaseContainer = styled(Container)`
     position: relative;
     padding-top: var(--space-230);
-    background-color: white;
 `;
 
 const AboutContent = styled.div`

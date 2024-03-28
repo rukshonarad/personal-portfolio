@@ -8,6 +8,7 @@ import { tools } from "./data";
 const ToolBarWrapper = styled(Container)`
     width: 100%;
     overflow: hidden;
+    background-color: white;
 `;
 
 const scrollRightToLeft = keyframes`
@@ -15,13 +16,13 @@ const scrollRightToLeft = keyframes`
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-300%);
     }
 `;
 
 const ToolIconsContainer = styled.div`
     display: flex;
-    animation: ${scrollRightToLeft} 10s linear infinite;
+    animation: ${scrollRightToLeft} 40s linear infinite;
 `;
 
 const StyledIcon = styled(Icon)`
@@ -55,7 +56,7 @@ const ToolBar: React.FC<{ tools: Tool[] }> = ({ tools }) => {
                     () => {
                         if (toolIconsContainer) {
                             toolIconsContainer.appendChild(
-                                toolIconsContainer.children[0].cloneNode(true)
+                                toolIconsContainer.children[2].cloneNode(true)
                             );
                             toolIconsContainer.style.transform = "none";
                         }

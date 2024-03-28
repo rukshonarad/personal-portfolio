@@ -3,12 +3,15 @@ import styled from "styled-components";
 import { Button, Input, Typography } from "../../../design-system";
 import { Container } from "../../components";
 import IconLink from "../../components/IconLinks";
-import emailjs from "emailjs-com"; // Import emailjs-com package
+import emailjs from "emailjs-com";
+import footer from "../../../assets/footer.png";
 
 const BaseContainer = styled(Container)`
     padding-top: 20rem;
     padding-bottom: 40rem;
-    background-color: var(--dodger-blue-25);
+    background-image: url(${footer});
+    background-size: cover;
+    background-position: center;
 `;
 
 const Content = styled.div`

@@ -1,13 +1,16 @@
 import styled from "styled-components";
-import { Button } from "../../../design-system";
+
 import { Typography } from "../../../design-system/Typography";
 import { motion } from "framer-motion";
-import Typewriter from "typewriter-effect";
+import background from "../../../assets/project.jpg";
 
 const SectionBase = styled.section`
     max-width: 192rem;
     padding-top: var(--space-250);
     padding-bottom: var(--space-50);
+    background-image: url(${background});
+    background-size: cover;
+    background-position: right;
 `;
 
 const FeaturesTextWrapper = styled.div`

@@ -10,7 +10,7 @@ import { Footer } from "./footer/Footer";
 const Base = styled.div`
     max-width: 192rem;
     margin: 0 auto;
-    background-color: var(--green-25);
+
     @media (max-width: 80em) {
         padding-bottom: var(--space-10);
     }
