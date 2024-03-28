@@ -4,14 +4,11 @@ import { Button, Input, Typography } from "../../../design-system";
 import { Container } from "../../components";
 import IconLink from "../../components/IconLinks";
 import emailjs from "emailjs-com";
-import footer from "../../../assets/footer.png";
 
 const BaseContainer = styled(Container)`
     padding-top: 20rem;
     padding-bottom: 40rem;
-    background-image: url(${footer});
-    background-size: cover;
-    background-position: center;
+    background-color: var(--dodger-blue-25);
 `;
 
 const Content = styled.div`

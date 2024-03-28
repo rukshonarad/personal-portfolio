@@ -47,13 +47,6 @@ const HeaderBase = styled.header`
     background-color: var(--white);
     box-shadow: var(--shadow-3xl);
     transition: all 0.5s;
-    @media (max-width: 70em) {
-        //1440
-        width: 80%;
-        top: 20px;
-        left: 50%;
-        padding: var(--space-10);
-    }
 `;
 
 const Logo = styled.div`

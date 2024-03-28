@@ -3,13 +3,13 @@ import { Typography } from "../../../design-system";
 import { Container } from "../../components";
 import { experiences } from "./experience/data";
 import { ExperienceCard } from "./experience/ExperienceCard";
-import grayBackground from "../../../assets/lightGray.jpg";
+
 const SectionBase = styled(Container)`
     padding-top: 20rem;
     padding-bottom: 15rem;
-    background-image: url(${grayBackground});
-    background-size: cover;
-    background-position: center;
+    background-color: transparent;
+    @media (max-width: 80em) {
+    }
 `;
 
 const ExperienceTextWrapper = styled.div`
@@ -29,7 +29,7 @@ const Title = styled(Typography)`
 const ExperienceCardsWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-40);
+    gap: var(--space-20);
     margin-bottom: var(--space-50);
     background-color: white;
 `;
